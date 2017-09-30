@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383C1F7F38190087ADA0 /* PhotoBroswer.m */; };
+		D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */; };
+		D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */; };
+		D86038461F7F39230087ADA0 /* ScaleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038451F7F39230087ADA0 /* ScaleAnimator.m */; };
+		D86038491F7F39490087ADA0 /* ScaleAnimatorCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */; };
+		D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */; };
+		D86038531F7F714C0087ADA0 /* CollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038521F7F714C0087ADA0 /* CollectionViewDataSource.m */; };
+		D86038561F7F71740087ADA0 /* CollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038551F7F71740087ADA0 /* CollectionViewDelegate.m */; };
 		D8CD0E341F7F2EC700027EE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */; };
 		D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E361F7F2EC700027EE8 /* ViewController.m */; };
 		D8CD0E3A1F7F2EC700027EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CD0E381F7F2EC700027EE8 /* Main.storyboard */; };
@@ -35,6 +43,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D860383B1F7F38190087ADA0 /* PhotoBroswer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswer.h; sourceTree = "<group>"; };
+		D860383C1F7F38190087ADA0 /* PhotoBroswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswer.m; sourceTree = "<group>"; };
+		D860383E1F7F383F0087ADA0 /* PhotoBrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserCell.h; sourceTree = "<group>"; };
+		D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserCell.m; sourceTree = "<group>"; };
+		D86038411F7F38FD0087ADA0 /* PhotoBrowserProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserProgressView.h; sourceTree = "<group>"; };
+		D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserProgressView.m; sourceTree = "<group>"; };
+		D86038441F7F39230087ADA0 /* ScaleAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleAnimator.h; sourceTree = "<group>"; };
+		D86038451F7F39230087ADA0 /* ScaleAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleAnimator.m; sourceTree = "<group>"; };
+		D86038471F7F39490087ADA0 /* ScaleAnimatorCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleAnimatorCoordinator.h; sourceTree = "<group>"; };
+		D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleAnimatorCoordinator.m; sourceTree = "<group>"; };
+		D860384D1F7F4D8F0087ADA0 /* PhotoBroswerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerDelegate.h; sourceTree = "<group>"; };
+		D860384E1F7F6E3A0087ADA0 /* PhotoBroswerLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerLayout.h; sourceTree = "<group>"; };
+		D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswerLayout.m; sourceTree = "<group>"; };
+		D86038511F7F714C0087ADA0 /* CollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewDataSource.h; sourceTree = "<group>"; };
+		D86038521F7F714C0087ADA0 /* CollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewDataSource.m; sourceTree = "<group>"; };
+		D86038541F7F71740087ADA0 /* CollectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewDelegate.h; sourceTree = "<group>"; };
+		D86038551F7F71740087ADA0 /* CollectionViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewDelegate.m; sourceTree = "<group>"; };
 		D8CD0E2F1F7F2EC700027EE8 /* ImagePreviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePreviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD0E321F7F2EC700027EE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +103,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D860383A1F7F37CF0087ADA0 /* ZQPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D860384D1F7F4D8F0087ADA0 /* PhotoBroswerDelegate.h */,
+				D860384E1F7F6E3A0087ADA0 /* PhotoBroswerLayout.h */,
+				D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */,
+				D86038511F7F714C0087ADA0 /* CollectionViewDataSource.h */,
+				D86038521F7F714C0087ADA0 /* CollectionViewDataSource.m */,
+				D86038541F7F71740087ADA0 /* CollectionViewDelegate.h */,
+				D86038551F7F71740087ADA0 /* CollectionViewDelegate.m */,
+				D860383B1F7F38190087ADA0 /* PhotoBroswer.h */,
+				D860383C1F7F38190087ADA0 /* PhotoBroswer.m */,
+				D860383E1F7F383F0087ADA0 /* PhotoBrowserCell.h */,
+				D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */,
+				D86038411F7F38FD0087ADA0 /* PhotoBrowserProgressView.h */,
+				D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */,
+				D86038441F7F39230087ADA0 /* ScaleAnimator.h */,
+				D86038451F7F39230087ADA0 /* ScaleAnimator.m */,
+				D86038471F7F39490087ADA0 /* ScaleAnimatorCoordinator.h */,
+				D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */,
+			);
+			path = ZQPhotoBrowser;
+			sourceTree = "<group>";
+		};
 		D8CD0E261F7F2EC700027EE8 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +150,7 @@
 		D8CD0E311F7F2EC700027EE8 /* ImagePreviewer */ = {
 			isa = PBXGroup;
 			children = (
+				D860383A1F7F37CF0087ADA0 /* ZQPhotoBrowser */,
 				D8CD0E321F7F2EC700027EE8 /* AppDelegate.h */,
 				D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */,
 				D8CD0E351F7F2EC700027EE8 /* ViewController.h */,
@@ -266,8 +316,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */,
+				D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */,
+				D86038531F7F714C0087ADA0 /* CollectionViewDataSource.m in Sources */,
+				D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */,
 				D8CD0E421F7F2EC700027EE8 /* main.m in Sources */,
+				D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */,
+				D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */,
+				D86038461F7F39230087ADA0 /* ScaleAnimator.m in Sources */,
 				D8CD0E341F7F2EC700027EE8 /* AppDelegate.m in Sources */,
+				D86038561F7F71740087ADA0 /* CollectionViewDelegate.m in Sources */,
+				D86038491F7F39490087ADA0 /* ScaleAnimatorCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
