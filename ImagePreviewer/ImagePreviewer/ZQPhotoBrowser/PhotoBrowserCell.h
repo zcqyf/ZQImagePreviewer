@@ -44,14 +44,26 @@ NS_ASSUME_NONNULL_END
 /**
  图像加载视图
  */
-@property (nonatomic,strong) UIImageView * _Nonnull imageView;
+@property (nonatomic,strong) UIImageView * _Nullable imageView;
+
+/**
+ 原图url
+ */
+@property (nonatomic,strong) NSString * _Nullable rawUrl;
+
+/**
+ 捏合手势放大图片时的最大允许比例, 默认2.0
+ */
+@property (nonatomic,assign) CGFloat imageMaximumZoomScale;
+
+/**
+ 双击放大图片时的目标比例，默认2.0
+ */
+@property (nonatomic,assign) CGFloat imageZoomScaleForDoubleTap;
 
 /**
  设置图片
-
- @param image 占位图或者本地图片
- @param url 网络资源
  */
-- (void)setImageWithPlaceHolder:( UIImage * _Nonnull )image url:(NSString * _Nullable)url;
+- (void)setImageWithDictionary:(NSDictionary *_Nonnull)dict;
 
 @end

@@ -20,8 +20,9 @@
  */
 @property (nonatomic,strong) UIView *maskView;
 
-
-
-
+/**
+ 更新动画结束后需要隐藏的view
+ */
+- (void)updateCurrentHiddenView:(UIView *)view;
 
 @end

@@ -14,6 +14,19 @@
 
 @implementation ScaleAnimatorCoordinator
 
+- (UIView *)maskView {
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor blackColor];
+    
+    return view;
+}
+
+- (void)updateCurrentHiddenView:(UIView *)view {
+    [_currentHiddenView setHidden:NO];
+    _currentHiddenView = view;
+    [view setHidden:YES];
+}
+
 - (void)presentationTransitionWillBegin {
     [super presentationTransitionWillBegin];
     
@@ -26,7 +39,7 @@
     _maskView.frame = containerView.bounds;
     _maskView.alpha = 0;
     [self.currentHiddenView setHidden:YES];
-    // TODO
+    
     [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         self.maskView.alpha = 1;
     } completion:nil];

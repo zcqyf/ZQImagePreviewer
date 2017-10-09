@@ -10,4 +10,9 @@
 
 @interface PhotoBrowserProgressView : UIView
 
+/**
+ 进度
+ */
+@property (nonatomic,assign) CGFloat progress;
+
 @end

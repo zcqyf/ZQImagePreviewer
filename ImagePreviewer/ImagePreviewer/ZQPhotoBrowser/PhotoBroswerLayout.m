@@ -49,35 +49,23 @@
 
 #pragma mark - lazy
 - (CGFloat)pageWidth {
-//    if (!_pageWidth) {
-//        _pageWidth = self.itemSize.width + self.minimumLineSpacing;
-//    }
-//    return _pageWidth;
     return self.itemSize.width + self.minimumLineSpacing;
 }
 
 - (CGFloat)lastPage {
     if (!self.collectionView.contentOffset.x) {
         return 0;
-    } else {
-        return round(self.collectionView.contentOffset.x/self.pageWidth);
     }
+    return round(self.collectionView.contentOffset.x / self.pageWidth);
 }
 
 - (CGFloat)maxPage {
-//    if (!_maxPage) {
-//        CGFloat contentWidth = self.collectionView.contentSize.width;
-//        contentWidth += self.minimumLineSpacing;
-//        _maxPage = contentWidth / self.pageWidth - 1;
-//    }
-//    return _maxPage;
     CGFloat contentWidth = self.collectionView.contentSize.width;
     if (!contentWidth) {
         return 0;
-    } else {
-        contentWidth += self.minimumLineSpacing;
-        return contentWidth / self.pageWidth - 1;
     }
+    contentWidth += self.minimumLineSpacing;
+    return contentWidth / self.pageWidth - 1;
 }
 
 //调整scroll停下来的位置
@@ -110,30 +98,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

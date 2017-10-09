@@ -36,11 +36,4 @@
  */
 - (instancetype)initWithStartView:(UIView *)startView endView:(UIView *)endView scaleView:(UIView *)scaleView;
 
-/**
- 配置转场动画
- */
-//- (void)animateTransitionUsingTransitonContext:(id<UIViewControllerContextTransitioning>)transitionContext;
-//
-//- (NSTimeInterval)transitionDurationUsingTransitoinContext:(id<UIViewControllerContextTransitioning>)transitionContext;
-
 @end
