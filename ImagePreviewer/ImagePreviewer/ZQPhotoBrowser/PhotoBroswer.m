@@ -256,7 +256,7 @@
     //缩略图
     UIImage *thumImage = [self.photoBroswerDelegate photoBrowser:self thumbnailImageForIndex:index];
     //高清图url
-    NSString *highQualityUrl = [self. photoBroswerDelegate photoBrowser:self highQualityUrlStringForIndex:index];
+    NSString *highQualityUrl = [self.photoBroswerDelegate photoBrowser:self highQualityUrlStringForIndex:index];
     //原图url
 //    NSString *rawUrl = [self.photoBroswerDelegate photoBrowser:self rawUrlStringForIndex:index];
     

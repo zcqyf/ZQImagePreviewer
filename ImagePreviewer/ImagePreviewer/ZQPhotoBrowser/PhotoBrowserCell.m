@@ -10,6 +10,7 @@
 #import "PhotoBrowserProgressView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+
 @interface PhotoBrowserCell () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 /**
@@ -317,23 +318,25 @@
     
     // 若已有原图缓存，优先使用原图
     // 次之使用高清图
-    UIImage *cacheImage;
-    if ([self imageFor:rawUrl])
-    {
-        cacheImage = [self imageFor:rawUrl];
-        placeholder = cacheImage;
-        url = rawUrl;
-        [_rawImageButton setHidden:YES];
-    }
-    else if ([self imageFor:highQualityUrl])
-    {
-        cacheImage = [self imageFor:highQualityUrl];
-        placeholder = cacheImage;
-    }
+//    UIImage *cacheImage;
+//    if ([self imageFor:rawUrl])
+//    {
+//        cacheImage = [self imageFor:rawUrl];
+//        placeholder = cacheImage;
+//        url = rawUrl;
+//        [_rawImageButton setHidden:YES];
+//    }
+//    else if ([self imageFor:highQualityUrl])
+//    {
+//        cacheImage = [self imageFor:highQualityUrl];
+//        placeholder = cacheImage;
+//    }
     // 处理只配置了原图而不配置高清图的情况。此时使用原图代替高清图作为下载url
-    if (!highQualityUrl) {
-        url = rawUrl;
-    }
+//    if (!highQualityUrl) {
+//        url = rawUrl;
+//    }
+    placeholder = image;
+    url = highQualityUrl;
     if (!url) {
         _imageView.image = image;
         [self didlayout];
@@ -356,15 +359,21 @@
     }];
 }
 
-- (UIImage *)imageFor:(NSString *)url {
-
-    UIImage *cacheImage;
-//    SDWebImageManager
-    SDImageCache
-
-
-    return [UIImage new];
-}
+//- (UIImage *)imageFor:(NSString *)url {
+//
+//    if (!url) {
+//        return nil;
+//    }
+//
+//    UIImage *cacheImage;
+//    NSURL *URL = [[NSURL alloc] initWithString:url];
+//
+//
+//
+//
+//
+//    return [UIImage new];
+//}
 
 #pragma mark - scrollView delegate
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
