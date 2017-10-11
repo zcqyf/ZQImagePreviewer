@@ -10,14 +10,27 @@
 #import "PhotoBroswer.h"
 #import "CollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebImage.h"
+
+#import "PhotoBrowserProgressView.h"
+#import "PhotoBrowser.h"
+#import "ModalAnimationDelegate.h"
 
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, PhotoBroswerDelegate>
 
-@property (nonatomic,strong) UICollectionView *collectionView;
+
 
 @property (nonatomic,strong) NSArray *thumbnailImageUrls;
 
 @property (nonatomic,strong) NSArray *highQualityImageUrls;
+
+@property (nonatomic,strong) UIImageView *imgView;
+
+@property (nonatomic,assign) NSInteger index;
+
+@property (nonatomic,strong) PhotoBrowserProgressView *progressView;
+
+@property (nonatomic,strong) ModalAnimationDelegate *modalAnimationDelegate;
 
 @end
 
@@ -25,12 +38,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setupUI];
-}
-
-- (void)setupUI {
-    self.view.backgroundColor = [UIColor whiteColor];
     
     _thumbnailImageUrls = @[@"http://wx1.sinaimg.cn/thumbnail/bfc243a3gy1febm7n9eorj20i60hsann.jpg",
                             @"http://wx3.sinaimg.cn/thumbnail/bfc243a3gy1febm7nzbz7j20ib0iek5j.jpg",
@@ -52,6 +59,80 @@
                               @"http://wx4.sinaimg.cn/large/bfc243a3gy1febm7tekewj20i20i4aoy.jpg",
                               @"http://wx3.sinaimg.cn/large/bfc243a3gy1febm7usmc8j20i543zngx.jpg",];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    _modalAnimationDelegate = [ModalAnimationDelegate new];
+    
+//    _index = 0;
+//
+//    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+//    [self.view addSubview:_imgView];
+//    _imgView.center = self.view.center;
+//
+//    _progressView = [PhotoBrowserProgressView new];
+//    [self.view addSubview:_progressView];
+//    _progressView.center = self.view.center;
+//    [_progressView setHidden:YES];
+//
+//    [self setImage];
+//
+//    [_imgView setUserInteractionEnabled:YES];
+//
+//    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+//    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+//    [_imgView addGestureRecognizer:leftSwipe];
+//
+//    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+//    rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+//    [_imgView addGestureRecognizer:rightSwipe];
+    
+    [self setupUI];
+}
+
+- (void)setImage {
+    [_progressView setHidden:NO];
+    [_imgView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:_highQualityImageUrls[_index]] placeholderImage:nil options:(SDWebImageRetryFailed) progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        if (expectedSize > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CGFloat progress = (CGFloat)receivedSize / (CGFloat)expectedSize;
+                _progressView.progress = progress;
+            });
+        }
+    } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        NSLog(@"图片加载完成");
+        [_progressView setHidden:YES];
+    }];
+    
+}
+
+- (void)swipe:(UISwipeGestureRecognizer *)swipe {
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
+        _index -= 1;
+    }
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+        _index += 1;
+    }
+    if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
+        NSLog(@"UISwipeGestureRecognizerDirectionUp");
+    }
+    if (swipe.direction == UISwipeGestureRecognizerDirectionDown) {
+        NSLog(@"UISwipeGestureRecognizerDirectionDown");
+    }
+    
+    if (_index > 8) {
+        _index = 0;
+    }
+    if (_index < 0 ) {
+        _index = 8;
+    }
+    
+    [self setImage];
+}
+
+- (void)setupUI {
+    
+    
     NSInteger colCount = 3;
     NSInteger rowCount = 3;
     
@@ -62,7 +143,7 @@
     
     CGFloat lineSpacing = 10.0;
     CGFloat height = itemSize * (CGFloat)rowCount + lineSpacing * 2;
-    CGFloat y = 60.0;
+    CGFloat y = (CGRectGetHeight(self.view.bounds) - height) / 2;
     
     CGRect frame = CGRectMake(xMargin, y, width, height);
     
@@ -84,6 +165,10 @@
     [_collectionView reloadData];
 }
 
+- (BOOL)prefersStatusBarHidden{
+    return NO;
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.thumbnailImageUrls.count;
@@ -98,9 +183,7 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    PhotoBroswer *photoBrowser = [[PhotoBroswer alloc] initWithPresentingVC:self delegate:self];
-    [photoBrowser show:indexPath.item];
+    [[PhotoBroswer alloc] showWithPresentingVC:self delegate:self index:indexPath.item];
 }
 
 #pragma mark - PhotoBroswerDelegate
@@ -108,26 +191,21 @@
     return self.thumbnailImageUrls.count;
 }
 
-/**
- 缩放起始图
- */
+/// 缩放起始视图
 - (UIView *)photoBrowser:(PhotoBroswer *)photoBrowser thumbnailViewForIndex:(NSInteger)index {
     return [_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
 }
 
-/**
- 图片加载前的placeholder
- */
+/// 图片加载前的placeholder
 - (UIImage *)photoBrowser:(PhotoBroswer *)photoBrowser thumbnailImageForIndex:(NSInteger)index {
     CollectionViewCell *cell = (CollectionViewCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+    // 取thumbnailImage
     return cell.imageView.image;
 }
 
-/**
- 高清图
- */
-- (NSString *)photoBrowser:(PhotoBroswer *)photoBrowser highQualityUrlStringForIndex:(NSInteger)index {
-    return self.highQualityImageUrls[index];
+/// 高清图
+- (NSURL *)photoBrowser:(PhotoBroswer *)photoBrowser highQualityUrlForIndex:(NSInteger)index {
+    return [NSURL URLWithString:self.highQualityImageUrls[index]];
 }
 
 //原图

@@ -304,17 +304,23 @@
  设置图片
  */
 - (void)setImageWithDictionary:(NSDictionary *)dict {
-    //  查看原图按钮
-    NSString *rawUrl = dict[@"rawUrl"];
-    UIImage *image = dict[@"thumImage"];
-    NSString *highQualityUrl = dict[@"highQualityUrl"];
     
-    [_rawImageButton setHidden:(rawUrl == nil)];
-    self.rawUrl = rawUrl;
+    if (dict.count == 0) {
+        NSLog(@"Image字典为空");
+        return;
+    }
+    
+    //  查看原图按钮
+//    NSString *rawUrl = dict[@"rawUrl"];
+    UIImage *image = dict[@"thumImage"];
+    NSURL *highQualityUrl = dict[@"highQualityUrl"];
+    
+//    [_rawImageButton setHidden:(rawUrl == nil)];
+//    self.rawUrl = rawUrl;
     
     //  取placeholder图像，默认使用传入的缩略图
-    UIImage *placeholder;
-    NSString *url;
+//    UIImage *placeholder;
+//    NSString *url;
     
     // 若已有原图缓存，优先使用原图
     // 次之使用高清图
@@ -335,21 +341,21 @@
 //    if (!highQualityUrl) {
 //        url = rawUrl;
 //    }
-    placeholder = image;
-    url = highQualityUrl;
-    if (!url) {
-        _imageView.image = image;
-        [self didlayout];
-        return;
-    }
-    [self loadImageWithPlaceHolder:placeholder url:url];
+//    placeholder = image;
+//    url = highQualityUrl;
+//    if (!url) {
+//        _imageView.image = image;
+//        [self didlayout];
+//        return;
+//    }
+    [self loadImageWithPlaceHolder:image url:highQualityUrl];
 }
 
 //加载图片
-- (void)loadImageWithPlaceHolder:(UIImage *)placeholder url:(NSString *)url {
+- (void)loadImageWithPlaceHolder:(UIImage *)placeholder url:(NSURL *)url {
     [self.progressView setHidden:NO];
     __weak typeof(self) weakSelf = self;
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    [_imageView sd_setImageWithURL:url placeholderImage:placeholder options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         if (expectedSize > 0) {
             weakSelf.progressView.progress = (CGFloat)receivedSize / (CGFloat)expectedSize;
         }

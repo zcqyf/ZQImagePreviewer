@@ -11,6 +11,7 @@
 @class PhotoBrowserCell;
 @protocol PhotoBrowserCellDelegate <NSObject>
 
+@optional
 /**
  单击时回调
  

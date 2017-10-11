@@ -75,13 +75,14 @@
     
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     CGFloat radius = CGRectGetMidY(self.bounds) - 2.5;
+    
     UIBezierPath *path = [[UIBezierPath alloc] init];
     [path moveToPoint:center];
     [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds), center.y - radius)];
     [path addArcWithCenter:center radius:radius startAngle:-(M_PI / 2) endAngle:(-(M_PI / 2) + M_PI * 2 * progress) clockwise:YES];
     [path closePath];
     path.lineWidth = 1;
-    
+
     return path;
 }
 

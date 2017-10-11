@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		279196177897D82553A6E0E5 /* libPods-ImagePreviewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */; };
+		D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81D7EC41F8C5C860038A724 /* Main.storyboard */; };
+		D81D7ED01F8CC2A90038A724 /* PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */; };
+		D81D7ED61F8CCF020038A724 /* PBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */; };
 		D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383C1F7F38190087ADA0 /* PhotoBroswer.m */; };
 		D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */; };
 		D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */; };
@@ -16,12 +19,12 @@
 		D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */; };
 		D8CD0E341F7F2EC700027EE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */; };
 		D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E361F7F2EC700027EE8 /* ViewController.m */; };
-		D8CD0E3A1F7F2EC700027EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CD0E381F7F2EC700027EE8 /* Main.storyboard */; };
 		D8CD0E3C1F7F2EC700027EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CD0E3B1F7F2EC700027EE8 /* Assets.xcassets */; };
 		D8CD0E3F1F7F2EC700027EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CD0E3D1F7F2EC700027EE8 /* LaunchScreen.storyboard */; };
 		D8CD0E421F7F2EC700027EE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E411F7F2EC700027EE8 /* main.m */; };
 		D8CD0E4C1F7F2EC700027EE8 /* ImagePreviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E4B1F7F2EC700027EE8 /* ImagePreviewerTests.m */; };
 		D8CD0E571F7F2EC800027EE8 /* ImagePreviewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E561F7F2EC800027EE8 /* ImagePreviewerUITests.m */; };
+		D8DD4E081F8E04AC00205684 /* ModalAnimationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD4E071F8E04AC00205684 /* ModalAnimationDelegate.m */; };
 		D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,11 @@
 /* Begin PBXFileReference section */
 		1BB9000E9E9F3EF078908A80 /* Pods-ImagePreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.debug.xcconfig"; sourceTree = "<group>"; };
 		85C6BF364FF9BF2ED846ADCB /* Pods-ImagePreviewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.release.xcconfig"; sourceTree = "<group>"; };
+		D81D7EC51F8C5C860038A724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D81D7ECE1F8CC2A90038A724 /* PhotoBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowser.h; sourceTree = "<group>"; };
+		D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowser.m; sourceTree = "<group>"; };
+		D81D7ED41F8CCF020038A724 /* PBCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBCollectionViewCell.h; sourceTree = "<group>"; };
+		D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBCollectionViewCell.m; sourceTree = "<group>"; };
 		D860383B1F7F38190087ADA0 /* PhotoBroswer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswer.h; sourceTree = "<group>"; };
 		D860383C1F7F38190087ADA0 /* PhotoBroswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswer.m; sourceTree = "<group>"; };
 		D860383E1F7F383F0087ADA0 /* PhotoBrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserCell.h; sourceTree = "<group>"; };
@@ -55,7 +63,6 @@
 		D86038451F7F39230087ADA0 /* ScaleAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleAnimator.m; sourceTree = "<group>"; };
 		D86038471F7F39490087ADA0 /* ScaleAnimatorCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleAnimatorCoordinator.h; sourceTree = "<group>"; };
 		D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleAnimatorCoordinator.m; sourceTree = "<group>"; };
-		D860384D1F7F4D8F0087ADA0 /* PhotoBroswerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerDelegate.h; sourceTree = "<group>"; };
 		D860384E1F7F6E3A0087ADA0 /* PhotoBroswerLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerLayout.h; sourceTree = "<group>"; };
 		D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswerLayout.m; sourceTree = "<group>"; };
 		D8CD0E2F1F7F2EC700027EE8 /* ImagePreviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePreviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +70,6 @@
 		D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D8CD0E351F7F2EC700027EE8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D8CD0E361F7F2EC700027EE8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D8CD0E391F7F2EC700027EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8CD0E3B1F7F2EC700027EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8CD0E3E1F7F2EC700027EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8CD0E401F7F2EC700027EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 		D8CD0E521F7F2EC700027EE8 /* ImagePreviewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePreviewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD0E561F7F2EC800027EE8 /* ImagePreviewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewerUITests.m; sourceTree = "<group>"; };
 		D8CD0E581F7F2EC800027EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8DD4E061F8E04AC00205684 /* ModalAnimationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalAnimationDelegate.h; sourceTree = "<group>"; };
+		D8DD4E071F8E04AC00205684 /* ModalAnimationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalAnimationDelegate.m; sourceTree = "<group>"; };
 		D8FD40531F8B8072002A4B66 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImagePreviewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,10 +130,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D81D7EC71F8C67900038A724 /* WebImageHelper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebImageHelper;
+			sourceTree = "<group>";
+		};
 		D860383A1F7F37CF0087ADA0 /* ZQPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				D860384D1F7F4D8F0087ADA0 /* PhotoBroswerDelegate.h */,
 				D860384E1F7F6E3A0087ADA0 /* PhotoBroswerLayout.h */,
 				D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */,
 				D860383B1F7F38190087ADA0 /* PhotoBroswer.h */,
@@ -167,16 +181,23 @@
 		D8CD0E311F7F2EC700027EE8 /* ImagePreviewer */ = {
 			isa = PBXGroup;
 			children = (
+				D81D7EC71F8C67900038A724 /* WebImageHelper */,
 				D860383A1F7F37CF0087ADA0 /* ZQPhotoBrowser */,
 				D8CD0E321F7F2EC700027EE8 /* AppDelegate.h */,
 				D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */,
 				D8CD0E351F7F2EC700027EE8 /* ViewController.h */,
 				D8CD0E361F7F2EC700027EE8 /* ViewController.m */,
+				D81D7ECE1F8CC2A90038A724 /* PhotoBrowser.h */,
+				D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */,
+				D81D7ED41F8CCF020038A724 /* PBCollectionViewCell.h */,
+				D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */,
+				D8DD4E061F8E04AC00205684 /* ModalAnimationDelegate.h */,
+				D8DD4E071F8E04AC00205684 /* ModalAnimationDelegate.m */,
 				D8FD40531F8B8072002A4B66 /* CollectionViewCell.h */,
 				D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */,
-				D8CD0E381F7F2EC700027EE8 /* Main.storyboard */,
 				D8CD0E3B1F7F2EC700027EE8 /* Assets.xcassets */,
 				D8CD0E3D1F7F2EC700027EE8 /* LaunchScreen.storyboard */,
+				D81D7EC41F8C5C860038A724 /* Main.storyboard */,
 				D8CD0E401F7F2EC700027EE8 /* Info.plist */,
 				D8CD0E411F7F2EC700027EE8 /* main.m */,
 			);
@@ -310,9 +331,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */,
 				D8CD0E3F1F7F2EC700027EE8 /* LaunchScreen.storyboard in Resources */,
 				D8CD0E3C1F7F2EC700027EE8 /* Assets.xcassets in Resources */,
-				D8CD0E3A1F7F2EC700027EE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,11 +409,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8DD4E081F8E04AC00205684 /* ModalAnimationDelegate.m in Sources */,
 				D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */,
 				D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */,
 				D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */,
+				D81D7ED01F8CC2A90038A724 /* PhotoBrowser.m in Sources */,
 				D8CD0E421F7F2EC700027EE8 /* main.m in Sources */,
 				D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */,
+				D81D7ED61F8CCF020038A724 /* PBCollectionViewCell.m in Sources */,
 				D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */,
 				D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */,
 				D86038461F7F39230087ADA0 /* ScaleAnimator.m in Sources */,
@@ -433,10 +457,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D8CD0E381F7F2EC700027EE8 /* Main.storyboard */ = {
+		D81D7EC41F8C5C860038A724 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D8CD0E391F7F2EC700027EE8 /* Base */,
+				D81D7EC51F8C5C860038A724 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

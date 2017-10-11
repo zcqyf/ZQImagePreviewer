@@ -12,61 +12,40 @@
 #import "ScaleAnimator.h"
 #import "ScaleAnimatorCoordinator.h"
 
-@interface PhotoBroswer () <UIViewControllerTransitioningDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerTransitioningDelegate, PhotoBrowserCellDelegate>
+@interface PhotoBroswer () <UIViewControllerTransitioningDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PhotoBrowserCellDelegate>
 
-/**
- 本VC的presentingViewController
- */
-@property (nonatomic,strong) UIViewController *presentingVC;
-
-/**
- 当前浏览图片的 index
- */
+// MARK: -  内部属性
+/// 当前显示的图片序号，从0开始
 @property (nonatomic,assign) NSInteger currentIndex;
 
-/**
- 横向容器
- */
-@property (nonatomic,strong) UICollectionView *collectionView;
-
-/**
- 自定义布局
- */
-@property (nonatomic,strong) PhotoBroswerLayout *flowLayout;
-
-/**
- 当前正在显示视图的前一个页面关联视图
- */
+/// 当前正在显示视图的前一个页面关联视图
 @property (nonatomic,strong) UIView *relatedView;
 
-/**
- 转场协调器
- */
+/// 转场协调器
 @property (nonatomic,weak) ScaleAnimatorCoordinator *animatorCoordinator;
 
-/**
- presentation 转场动画
- */
+/// presentation转场动画
 @property (nonatomic,weak) ScaleAnimator *presentationAnimator;
 
-/**
- PageControl TODO lazy
- */
-//@property (nonatomic,strong) UIView *pageControl;
+/// 本VC的presentingViewController
+@property (nonatomic,strong) UIViewController *presentingVC;
 
-/**
- 标记第一次 viewDidAppeared，默认 NO
- */
+/// 容器
+@property (nonatomic,strong) UICollectionView *collectionView;
+
+/// 容器layout
+@property (nonatomic,strong) PhotoBroswerLayout *flowLayout;
+
+/// PageControl
+@property (nonatomic,strong) UIView *pageControl;
+
+/// 标记第一次viewDidAppeared
 @property (nonatomic,assign) BOOL onceViewDidAppeared;
 
-/**
- 保存原 windowLevel
- */
+/// 保存原windowLevel
 @property (nonatomic,assign) UIWindowLevel originWindowLevel;
 
-/**
- 是否已初始化视图，默认 NO
- */
+/// 是否已初始化视图
 @property (nonatomic,assign) BOOL didInitializedLayout;
 
 @end
@@ -75,18 +54,20 @@
 
 #pragma mark - 初始化
 - (instancetype)initWithPresentingVC:(UIViewController *)viewController delegate:(id<PhotoBroswerDelegate>)delegate {
-    self.presentingVC = viewController;
-    self.photoBroswerDelegate = delegate;
     
-    self.photoSpacing = 30;
-    self.imageScaleMode = UIViewContentModeScaleAspectFill;
-    self.imageMaximumZoomScale = 2.0;
-    self.imageZoomScaleForDoubleTap = 2.0;
-    self.onceViewDidAppeared = NO;
-    self.didInitializedLayout = NO;
+    _presentingVC = viewController;
+    _photoBroswerDelegate = delegate;
     
-    self.flowLayout = [[PhotoBroswerLayout alloc] init];
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
+    _currentIndex = 0;
+    _photoSpacing = 30;
+    _imageMaximumZoomScale = 2.0;
+    _imageZoomScaleForDoubleTap = 2.0;
+    _imageScaleMode = UIViewContentModeScaleAspectFill;
+    _onceViewDidAppeared = NO;
+    _didInitializedLayout = NO;
+    
+    _flowLayout = [[PhotoBroswerLayout alloc] init];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
     
     return self;
 }
@@ -97,43 +78,54 @@
 }
 
 - (void)show:(NSInteger)index {
-    _currentIndex = index;
+    self.currentIndex = index;
     self.transitioningDelegate = self;
     self.modalPresentationStyle = UIModalPresentationCustom;
     self.modalPresentationCapturesStatusBarAppearance = YES;
+    
     [_presentingVC presentViewController:self animated:YES completion:nil];
 }
 
 #pragma mark - setter and getter
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
-    [self.animatorCoordinator updateCurrentHiddenView:_relatedView];
+    [self.animatorCoordinator updateCurrentHiddenView:self.relatedView];
+    
     if (self.pageControlDelegate && self.pageControl) {
-        [self.pageControlDelegate photoBrowserPageControl:self.pageControl didChangedCurrentPage:_currentIndex];
+        [self.pageControlDelegate photoBrowserPageControl:self.pageControl didChangedCurrentPage:self.currentIndex];
     }
 }
 
 - (UIView *)relatedView {
-    return [self.photoBroswerDelegate photoBrowser:self thumbnailViewForIndex:_currentIndex];
+    return [self.photoBroswerDelegate photoBrowser:self thumbnailViewForIndex:self.currentIndex];
 }
 
+//- (UIView *)pageControl {
+//    return [self.pageControlDelegate pageControlOfPhotoBrowser:self];
+//}
+
 - (UIView *)pageControl {
-    return [self.pageControlDelegate pageControlOfPhotoBrowser:self];
+    if (!_pageControl) {
+        _pageControl = [self.pageControlDelegate pageControlOfPhotoBrowser:self];
+    }
+    return _pageControl;
 }
 
 #pragma mark - lifecycle
+// MARK: - 内部方法
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialLayout];
 }
 
-/**
- 加载视图并布局
- */
+/// 初始layout
 - (void)initialLayout {
     if (self.didInitializedLayout) {
         return;
     }
+    
+    self.view.backgroundColor = [UIColor greenColor];
+    
     _didInitializedLayout = YES;
     
     // flowLayout
@@ -153,26 +145,24 @@
     [self.view addSubview:_collectionView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    //  遮盖状态栏
-    [self hideStatusBar:YES];
+/// 显示pageControl
+- (void)layoutPageControl {
+    if (!self.pageControlDelegate) {
+        return;
+    }
+    //  如果只有一页，不显示
+    if (self.pageControlDelegate.numberOfPages <= 1) {
+        return;
+    }
+    if (!_onceViewDidAppeared && self.pageControl) {
+        _onceViewDidAppeared = YES;
+        [self.view addSubview:self.pageControl];
+        [self.pageControlDelegate photoBrowserPageControl:self.pageControl didMoveTo:self.view];
+    }
+    [self.pageControlDelegate photoBrowserPageControl:self.pageControl needLayoutIn:self.view];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    //  页面出来后，再显示pageControl
-//    [self layoutPageControl];
-}
-
-/**
- 禁止旋转
- */
-- (BOOL)shouldAutorotate {
-    return NO;
-}
-
-//  遮盖状态栏。以改变windowLevel的方式遮盖
+/// 遮盖状态栏。以改变windowLevel的方式遮盖
 - (void)hideStatusBar:(BOOL)isHide {
     
     UIWindow *win;
@@ -201,24 +191,28 @@
         }
         window.windowLevel = _originWindowLevel;
     }
-    
 }
-//  显示pageControl
-- (void)layoutPageControl {
-    if (!self.pageControlDelegate) {
-        return;
-    }
-    //  如果只有一页，不显示
-    if (self.pageControlDelegate.numberOfPages <= 1) {
-        return;
-    }
-    if (!_onceViewDidAppeared && (self.pageControl)) {
-        _onceViewDidAppeared = YES;
-        [self.view addSubview:self.pageControl];
-        [self.pageControlDelegate photoBrowserPageControl:self.pageControl didMoveTo:self.view];
-    }
-    [self.pageControlDelegate photoBrowserPageControl:self.pageControl needLayoutIn:self.view];
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //  遮盖状态栏
+    [self hideStatusBar:YES];
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //  页面出来后，再显示pageControl
+//    [self layoutPageControl];
+}
+
+/**
+ 禁止旋转
+ */
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -226,10 +220,6 @@
 }
 
 #pragma mark - collectionView dataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (!self.photoBroswerDelegate) {
         return 0;
@@ -241,36 +231,36 @@
     PhotoBrowserCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([PhotoBrowserCell class]) forIndexPath:indexPath];
     cell.imageView.contentMode = _imageScaleMode;
     cell.photoBroswerCellDelegate = self;
-    [cell setImageWithDictionary:[self imageForIndex:indexPath.item]];
+    cell.backgroundColor = [UIColor redColor];
+    [cell setImageWithDictionary:[self getImageInfoAt:indexPath.item]];
     cell.imageMaximumZoomScale = _imageMaximumZoomScale;
     cell.imageZoomScaleForDoubleTap = _imageZoomScaleForDoubleTap;
     
     return cell;
 }
 
-- (NSDictionary *)imageForIndex:(NSInteger)index {
+- (NSDictionary *)getImageInfoAt:(NSInteger)index {
     
     if (!self.photoBroswerDelegate) {
-        return nil;
+        NSLog(@"photoBroswerDelegate为空");
+        return @{};
     }
-    //缩略图
-    UIImage *thumImage = [self.photoBroswerDelegate photoBrowser:self thumbnailImageForIndex:index];
-    //高清图url
-    NSString *highQualityUrl = [self.photoBroswerDelegate photoBrowser:self highQualityUrlStringForIndex:index];
-    //原图url
-//    NSString *rawUrl = [self.photoBroswerDelegate photoBrowser:self rawUrlStringForIndex:index];
+    //  缩略图
+    UIImage *thumnailImage = [self.photoBroswerDelegate photoBrowser:self thumbnailImageForIndex:index];
+    //  高清图 url
+    NSURL *highQualityUrl = [self.photoBroswerDelegate photoBrowser:self highQualityUrlForIndex:index];
+    //  原图url
+//    NSURL *rawUrl = [self.photoBroswerDelegate photoBrowser:self rawUrlForIndex:index];
+    NSDictionary *dict = @{@"thumnailImage": thumnailImage, @"highQualityUrl": highQualityUrl, @"rawUrl": @""};
     
-    return @{
-             @"thumImage": thumImage,
-             @"highQualityUrl": highQualityUrl,
-             };
+    return dict;
 }
 
 #pragma mark - collectionView delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat width = scrollView.bounds.size.width + _photoSpacing;
-    _currentIndex = (NSInteger)(offsetX / width);
+    self.currentIndex = (NSInteger)(offsetX / width);
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
@@ -278,7 +268,7 @@
     //  视图布局
     [self initialLayout];
     //立即加载collectionView
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.currentIndex inSection:0];
     [_collectionView reloadData];
     [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     [_collectionView layoutIfNeeded];
@@ -288,7 +278,7 @@
     imageView.contentMode = _imageScaleMode;
     imageView.clipsToBounds = YES;
     
-    //在本方法被调用时，endView和scaleView还未确定。需于viewDidLoad方法中给animator赋值endView
+    // 创建animator
     ScaleAnimator *animator = [[ScaleAnimator alloc] initWithStartView:self.relatedView endView:cell.imageView scaleView:imageView];
     _presentationAnimator = animator;
     
@@ -308,7 +298,7 @@
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     ScaleAnimatorCoordinator *coordinator = [[ScaleAnimatorCoordinator alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-    coordinator.currentHiddenView = _relatedView;
+    coordinator.currentHiddenView = self.relatedView;
     _animatorCoordinator = coordinator;
     
     return coordinator;
