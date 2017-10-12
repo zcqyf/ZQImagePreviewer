@@ -8,12 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoBrowser : UIViewController <UIViewControllerTransitioningDelegate>
+@class PhotoBrowser;
+@protocol PhotoBrowserDelegate <NSObject>
+
 
 /**
- 横向容器
+ 退出图片浏览器方法
+
+ @param photoBrowser PhotoBrowser
+ @param index 抛出对应图片index
  */
-@property (nonatomic,strong) UICollectionView *collectionView;
+- (void)photoBrowser:(PhotoBrowser *)photoBrowser dismissAtIndex:(NSInteger)index;
+
+/// 实现本方法以返回默认图所在view，在转场动画完成后将会修改这个view的hidden属性
+/// 比如你可以返回imageView，或整个cell
+- (UIView *)photoBrowser:(PhotoBrowser *)photoBrowser thumbnailViewForIndex:(NSInteger)index;
+
+@end
+
+@interface PhotoBrowser : UIViewController <UIViewControllerTransitioningDelegate>
+
+@property (nonatomic,strong) UIImageView *endImageView;
+
+@property (nonatomic,weak) id <PhotoBrowserDelegate> delegate;
+
+/// 本VC的presentingViewController
+@property (nonatomic,strong) UIViewController *presentingVC;
+
 
 /**
  URL 数组
@@ -34,11 +55,6 @@
  图片缩放模式，默认 scaleAspectFill
  */
 @property (nonatomic,assign) UIViewContentMode imageScaleMode;
-
-/**
- 本VC的presentingViewController
- */
-@property (nonatomic,strong) UIViewController *presentingVC;
 
 /**
  捏合手势放大图片时的最大允许比例，默认 2.0

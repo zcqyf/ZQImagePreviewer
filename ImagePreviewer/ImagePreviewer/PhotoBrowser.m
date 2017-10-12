@@ -9,10 +9,16 @@
 #import "PhotoBrowser.h"
 #import "PhotoBroswerLayout.h"
 #import "PBCollectionViewCell.h"
-#import "ScaleAnimator.h"
-#import "ScaleAnimatorCoordinator.h"
 
-@interface PhotoBrowser () <UICollectionViewDelegate, UICollectionViewDataSource, PBCollectionViewCellDelegate>
+#import "ImageScaleAnimator.h"
+#import "ImageScaleAnimatorCoordinator.h"
+
+@interface PhotoBrowser () <UICollectionViewDelegate, UICollectionViewDataSource, PBCollectionViewCellDelegate, UIViewControllerTransitioningDelegate>
+
+/**
+ 横向容器
+ */
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 /**
  顶部页码显示label
@@ -20,29 +26,17 @@
 @property (nonatomic,strong) UILabel *pageLabel;
 
 /**
- 当前正在显示视图的前一个页面关联视图
- */
-@property (nonatomic,strong) UIView *relatedView;
-
-/**
- 转场协调器
- */
-@property (nonatomic,weak) ScaleAnimatorCoordinator *animatorCoordinator;
-
-/**
- presentation 转场动画
- */
-@property (nonatomic,weak) ScaleAnimator *presentationAnimator;
-
-/**
- 是否已初始化视图，默认 NO
- */
-@property (nonatomic,assign) BOOL didInitializedLayout;
-
-/**
  自定义布局
  */
 @property (nonatomic,strong) PhotoBroswerLayout *flowLayout;
+
+/// 当前正在显示视图的前一个页面关联视图
+@property (nonatomic,strong) UIView *relatedView;
+
+@property (nonatomic,assign) BOOL isFirstTimeLayout;
+
+/// 转场协调器
+@property (nonatomic,weak) ImageScaleAnimatorCoordinator *animatorCoordinator;
 
 @end
 
@@ -53,18 +47,15 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"初始化");
-        
         _photoSpacing = 20;
         _imageMaximumZoomScale = 2.0;
         _imageZoomScaleForDoubleTap = 2.0;
         _imageScaleMode = UIViewContentModeScaleAspectFill;
-        _didInitializedLayout = NO;
+        _isFirstTimeLayout = YES;
         
         _flowLayout = [PhotoBroswerLayout new];
         _pageLabel = [UILabel new];
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_flowLayout];
-        
     }
     return self;
 }
@@ -72,8 +63,7 @@
 #pragma mark - view life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setupUI];
-    [self initialLayout];
+    [self layout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -84,17 +74,23 @@
     [super viewWillDisappear:animated];
 }
 
-- (void)setupUI {
-    self.view.backgroundColor = [UIColor whiteColor];
+- (void)layout {
     
+    if (!_isFirstTimeLayout) {
+        return;
+    }
+    _isFirstTimeLayout = NO;
     
     _flowLayout.minimumLineSpacing = _photoSpacing;
     _flowLayout.minimumInteritemSpacing = 0;
     _flowLayout.itemSize = self.view.bounds.size;
     
+    _collectionView.frame = self.view.bounds;
+    _collectionView.backgroundColor = [UIColor clearColor];
+    
     _collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
     [_collectionView setShowsHorizontalScrollIndicator:NO];
-    _collectionView.backgroundColor = [UIColor blackColor];
+    _collectionView.backgroundColor = [UIColor clearColor];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
@@ -106,40 +102,10 @@
     _pageLabel.textColor = [UIColor whiteColor];
     _pageLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:_pageLabel];
-}
-
-/**
- 加载视图并布局
- */
-- (void)initialLayout {
-    if (self.didInitializedLayout) {
-        return;
-    }
-    _didInitializedLayout = YES;
-
-    // flowLayout
-    _flowLayout.minimumLineSpacing = _photoSpacing;
-    _flowLayout.itemSize = self.view.bounds.size;
-
-    //collectionView
-    _collectionView.frame = self.view.bounds;
-    _collectionView.backgroundColor = [UIColor clearColor];
-    //设置减速速率
-    _collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
-    _collectionView.showsVerticalScrollIndicator = NO;
-    _collectionView.showsHorizontalScrollIndicator = NO;
-    _collectionView.dataSource = self;
-    _collectionView.delegate = self;
-    [_collectionView registerClass:[PBCollectionViewCell class] forCellWithReuseIdentifier: NSStringFromClass([PBCollectionViewCell class])];
-    [self.view addSubview:_collectionView];
     
-    _pageLabel.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.bounds), 21);
-    _pageLabel.textAlignment = NSTextAlignmentCenter;
-    _pageLabel.textColor = [UIColor whiteColor];
-    _pageLabel.font = [UIFont systemFontOfSize:17];
-    [self.view addSubview:_pageLabel];
+    _pageLabel.text = [NSString stringWithFormat:@"%ld / %lu", _currentIndex + 1, (unsigned long)_imageUrls.count];
     
-    [self.collectionView reloadData];
+//    [_animatorCoordinator updateCurrentHiddenView:self.relatedView];
 }
 
 #pragma mark - other setting
@@ -157,13 +123,14 @@
 
 - (void)showWithIndex:(NSInteger)index {
     self.currentIndex = index;
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
-//    [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionLeft) animated:NO];
     
     self.transitioningDelegate = self;
     self.modalPresentationStyle = UIModalPresentationCustom;
-    self.modalPresentationCapturesStatusBarAppearance = YES;
+    
     [_presentingVC presentViewController:self animated:YES completion:nil];
+    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
+//    [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionLeft) animated:NO];
 }
 
 #pragma mark - setter and getter
@@ -174,8 +141,14 @@
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
-    [_animatorCoordinator updateCurrentHiddenView:_relatedView];
-//    _pageLabel.text = [NSString stringWithFormat:@"%ld / %lu", _currentIndex + 1, (unsigned long)_imageUrls.count];
+    
+    _pageLabel.text = [NSString stringWithFormat:@"%ld / %lu", _currentIndex + 1, (unsigned long)_imageUrls.count];
+    
+    [_animatorCoordinator updateCurrentHiddenView:self.relatedView];
+}
+
+- (UIView *)relatedView {
+    return [self.delegate photoBrowser:self thumbnailViewForIndex:self.currentIndex];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -187,6 +160,7 @@
     PBCollectionViewCell *cell = (PBCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([PBCollectionViewCell class]) forIndexPath:indexPath];
     cell.delegate = self;
     cell.imgUrl = _imageUrls[indexPath.row];
+    self.endImageView = cell.imgView;
     
     return cell;
 }
@@ -208,17 +182,11 @@
     }
 }
 
-#pragma mark - PBCollectionViewCellDelegate
-//  点击退出 browser
-- (void)photoBrowserCellDidSingleTap:(PBCollectionViewCell *)cell {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - UIViewControllerTransitioningDelegate
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     //  视图布局
-    [self initialLayout];
-    //立即加载collectionView
+    [self layout];
+    //  立即加载collectionView
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
     [_collectionView reloadData];
     [_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
@@ -229,36 +197,51 @@
     imageView.contentMode = _imageScaleMode;
     imageView.clipsToBounds = YES;
     
-    //在本方法被调用时，endView和scaleView还未确定。需于viewDidLoad方法中给animator赋值endView
-    ScaleAnimator *animator = [[ScaleAnimator alloc] initWithStartView:self.relatedView endView:cell.imgView scaleView:imageView];
-    _presentationAnimator = animator;
+    //  创建animator
+    ImageScaleAnimator *animator = [[ImageScaleAnimator alloc] initWithStartView:self.relatedView scaleView:imageView endView:cell.imgView isPresented:YES];
     
     return animator;
 }
 
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    PBCollectionViewCell *cell = (PBCollectionViewCell *)self.collectionView.visibleCells.firstObject;
-    if (!cell) {
-        return nil;
-    }
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    
+    PBCollectionViewCell *cell = (PBCollectionViewCell *)_collectionView.visibleCells.firstObject;
+    
     UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.imgView.image];
     imageView.contentMode = _imageScaleMode;
     imageView.clipsToBounds = YES;
-    return [[ScaleAnimator alloc] initWithStartView:cell.imgView endView:self.relatedView scaleView:imageView];
+    
+    return [[ImageScaleAnimator alloc] initWithStartView:cell.imgView scaleView:imageView endView:self.relatedView isPresented:NO];
 }
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
-    ScaleAnimatorCoordinator *coordinator = [[ScaleAnimatorCoordinator alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-    coordinator.currentHiddenView = _relatedView;
+    ImageScaleAnimatorCoordinator *coordinator = [[ImageScaleAnimatorCoordinator alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    coordinator.currentHiddenView = self.relatedView;
     _animatorCoordinator = coordinator;
-    
+
     return coordinator;
+}
+
+//
+//-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+//    return self.transitionController.interacting ? self.transitionController : nil;
+//}
+
+
+#pragma mark - PBCollectionViewCellDelegate
+//  点击退出 browser
+- (void)photoBrowserCellDidSingleTap:(PBCollectionViewCell *)cell {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(photoBrowser:dismissAtIndex:)]) {
+        [self.delegate photoBrowser:self dismissAtIndex:_currentIndex];
+    }
 }
 
 //  长按保存图片
 - (void)photoBroswerCell:(PBCollectionViewCell *)cell didLongPressWith:(UIImage *)image {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
     UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"保存图片" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        //  TODO保存图片到相册
         NSLog(@"保存图片");
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];

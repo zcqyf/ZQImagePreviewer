@@ -7,18 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "PhotoBroswer.h"
 #import "CollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "UIImageView+WebImage.h"
 
 #import "PhotoBrowserProgressView.h"
 #import "PhotoBrowser.h"
-#import "ModalAnimationDelegate.h"
-
-@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, PhotoBroswerDelegate>
+#import "ImageScaleAnimator.h"
 
 
+@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, PhotoBrowserDelegate, UIViewControllerTransitioningDelegate>
+
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 @property (nonatomic,strong) NSArray *thumbnailImageUrls;
 
@@ -30,7 +29,13 @@
 
 @property (nonatomic,strong) PhotoBrowserProgressView *progressView;
 
-@property (nonatomic,strong) ModalAnimationDelegate *modalAnimationDelegate;
+@property (nonatomic,strong) UIImageView *scaleImageView;
+
+@property (nonatomic,strong) UIImageView *startImageView;
+
+@property (nonatomic,strong) UIImageView *endImageView;
+
+@property (nonatomic,strong) PhotoBrowser *photoBrowser;
 
 @end
 
@@ -60,32 +65,7 @@
                               @"http://wx3.sinaimg.cn/large/bfc243a3gy1febm7usmc8j20i543zngx.jpg",];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    _modalAnimationDelegate = [ModalAnimationDelegate new];
-    
-//    _index = 0;
-//
-//    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-//    [self.view addSubview:_imgView];
-//    _imgView.center = self.view.center;
-//
-//    _progressView = [PhotoBrowserProgressView new];
-//    [self.view addSubview:_progressView];
-//    _progressView.center = self.view.center;
-//    [_progressView setHidden:YES];
-//
-//    [self setImage];
-//
-//    [_imgView setUserInteractionEnabled:YES];
-//
-//    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-//    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
-//    [_imgView addGestureRecognizer:leftSwipe];
-//
-//    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-//    rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
-//    [_imgView addGestureRecognizer:rightSwipe];
-    
+
     [self setupUI];
 }
 
@@ -169,6 +149,35 @@
     return NO;
 }
 
+- (UIImageView *)scaleImageView {
+    if (!_scaleImageView) {
+        _scaleImageView = [UIImageView new];
+    }
+    return _scaleImageView;
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    self.endImageView = _photoBrowser.endImageView;
+    self.scaleImageView.image = self.startImageView.image;
+    ImageScaleAnimator *scaleAnimator = [[ImageScaleAnimator alloc] initWithStartView:self.startImageView scaleView:self.scaleImageView endView:self.endImageView isPresented:YES];
+    return scaleAnimator;
+}
+
+// 3. Implement the methods to supply proper objects.
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    self.scaleImageView.image = self.endImageView.image;
+    ImageScaleAnimator *scaleAnimator = [[ImageScaleAnimator alloc] initWithStartView:self.endImageView scaleView:self.scaleImageView endView:self.startImageView isPresented:NO];
+    return scaleAnimator;
+}
+
+//
+//-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+//    return self.transitionController.interacting ? self.transitionController : nil;
+//}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.thumbnailImageUrls.count;
@@ -183,47 +192,26 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [[PhotoBroswer alloc] showWithPresentingVC:self delegate:self index:indexPath.item];
+
+    _photoBrowser = [PhotoBrowser new];
+    _photoBrowser.presentingVC = self;
+    _photoBrowser.delegate = self;
+
+    _photoBrowser.imageUrls = self.highQualityImageUrls;
+    [_photoBrowser showWithIndex:indexPath.item];
+    
 }
 
-#pragma mark - PhotoBroswerDelegate
-- (NSInteger)numberOfPhotosInPhotoBroswer:(PhotoBroswer *)photoBrowser {
-    return self.thumbnailImageUrls.count;
+#pragma mark - PhotoBrowserDelegate
+- (void)photoBrowser:(PhotoBrowser *)photoBrowser dismissAtIndex:(NSInteger)index {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/// 缩放起始视图
-- (UIView *)photoBrowser:(PhotoBroswer *)photoBrowser thumbnailViewForIndex:(NSInteger)index {
+- (UIView *)photoBrowser:(PhotoBrowser *)photoBrowser thumbnailViewForIndex:(NSInteger)index {
     return [_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
 }
 
-/// 图片加载前的placeholder
-- (UIImage *)photoBrowser:(PhotoBroswer *)photoBrowser thumbnailImageForIndex:(NSInteger)index {
-    CollectionViewCell *cell = (CollectionViewCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
-    // 取thumbnailImage
-    return cell.imageView.image;
-}
-
-/// 高清图
-- (NSURL *)photoBrowser:(PhotoBroswer *)photoBrowser highQualityUrlForIndex:(NSInteger)index {
-    return [NSURL URLWithString:self.highQualityImageUrls[index]];
-}
-
-//原图
-//- (NSString *)photoBrowser:(PhotoBroswer *)photoBrowser rawUrlStringForIndex:(NSInteger)index {
-//    return self.highQualityImageUrls[index];
-//}
-
-- (void)photoBrowser:(PhotoBroswer *)photoBrowser didLongPressForIndex:(NSInteger)index image:(UIImage *)image {
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"保存图片" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"保存图片");
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
-    
-    [actionSheet addAction:saveAction];
-    [actionSheet addAction:cancelAction];
-    [photoBrowser presentViewController:actionSheet animated:YES completion:nil];
-}
+#pragma mark - PhotoBroswerDelegate
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

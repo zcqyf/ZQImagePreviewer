@@ -11,6 +11,8 @@
 		D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81D7EC41F8C5C860038A724 /* Main.storyboard */; };
 		D81D7ED01F8CC2A90038A724 /* PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */; };
 		D81D7ED61F8CCF020038A724 /* PBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */; };
+		D843F2B51F8F5C9F0027EC29 /* ImageScaleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D843F2B31F8F5C9E0027EC29 /* ImageScaleAnimator.m */; };
+		D843F2B81F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D843F2B71F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m */; };
 		D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383C1F7F38190087ADA0 /* PhotoBroswer.m */; };
 		D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */; };
 		D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */; };
@@ -24,7 +26,6 @@
 		D8CD0E421F7F2EC700027EE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E411F7F2EC700027EE8 /* main.m */; };
 		D8CD0E4C1F7F2EC700027EE8 /* ImagePreviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E4B1F7F2EC700027EE8 /* ImagePreviewerTests.m */; };
 		D8CD0E571F7F2EC800027EE8 /* ImagePreviewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E561F7F2EC800027EE8 /* ImagePreviewerUITests.m */; };
-		D8DD4E081F8E04AC00205684 /* ModalAnimationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD4E071F8E04AC00205684 /* ModalAnimationDelegate.m */; };
 		D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,10 @@
 		D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowser.m; sourceTree = "<group>"; };
 		D81D7ED41F8CCF020038A724 /* PBCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBCollectionViewCell.h; sourceTree = "<group>"; };
 		D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBCollectionViewCell.m; sourceTree = "<group>"; };
+		D843F2B31F8F5C9E0027EC29 /* ImageScaleAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimator.m; sourceTree = "<group>"; };
+		D843F2B41F8F5C9E0027EC29 /* ImageScaleAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimator.h; sourceTree = "<group>"; };
+		D843F2B61F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimatorCoordinator.h; sourceTree = "<group>"; };
+		D843F2B71F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimatorCoordinator.m; sourceTree = "<group>"; };
 		D860383B1F7F38190087ADA0 /* PhotoBroswer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswer.h; sourceTree = "<group>"; };
 		D860383C1F7F38190087ADA0 /* PhotoBroswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswer.m; sourceTree = "<group>"; };
 		D860383E1F7F383F0087ADA0 /* PhotoBrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserCell.h; sourceTree = "<group>"; };
@@ -80,8 +85,6 @@
 		D8CD0E521F7F2EC700027EE8 /* ImagePreviewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePreviewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD0E561F7F2EC800027EE8 /* ImagePreviewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewerUITests.m; sourceTree = "<group>"; };
 		D8CD0E581F7F2EC800027EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8DD4E061F8E04AC00205684 /* ModalAnimationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalAnimationDelegate.h; sourceTree = "<group>"; };
-		D8DD4E071F8E04AC00205684 /* ModalAnimationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalAnimationDelegate.m; sourceTree = "<group>"; };
 		D8FD40531F8B8072002A4B66 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImagePreviewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +194,10 @@
 				D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */,
 				D81D7ED41F8CCF020038A724 /* PBCollectionViewCell.h */,
 				D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */,
-				D8DD4E061F8E04AC00205684 /* ModalAnimationDelegate.h */,
-				D8DD4E071F8E04AC00205684 /* ModalAnimationDelegate.m */,
+				D843F2B41F8F5C9E0027EC29 /* ImageScaleAnimator.h */,
+				D843F2B31F8F5C9E0027EC29 /* ImageScaleAnimator.m */,
+				D843F2B61F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.h */,
+				D843F2B71F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m */,
 				D8FD40531F8B8072002A4B66 /* CollectionViewCell.h */,
 				D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */,
 				D8CD0E3B1F7F2EC700027EE8 /* Assets.xcassets */,
@@ -409,14 +414,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8DD4E081F8E04AC00205684 /* ModalAnimationDelegate.m in Sources */,
 				D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */,
 				D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */,
 				D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */,
 				D81D7ED01F8CC2A90038A724 /* PhotoBrowser.m in Sources */,
+				D843F2B51F8F5C9F0027EC29 /* ImageScaleAnimator.m in Sources */,
 				D8CD0E421F7F2EC700027EE8 /* main.m in Sources */,
 				D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */,
 				D81D7ED61F8CCF020038A724 /* PBCollectionViewCell.m in Sources */,
+				D843F2B81F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m in Sources */,
 				D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */,
 				D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */,
 				D86038461F7F39230087ADA0 /* ScaleAnimator.m in Sources */,
