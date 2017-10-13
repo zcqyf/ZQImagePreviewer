@@ -14,6 +14,7 @@
 #import "PhotoBrowser.h"
 #import "ImageScaleAnimator.h"
 
+#import "CGContextDrawPDFReaderController.h"
 
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, PhotoBrowserDelegate, UIViewControllerTransitioningDelegate>
 
@@ -53,8 +54,8 @@
                             @"http://wx2.sinaimg.cn/thumbnail/bfc243a3gy1febm7sdk4lj20ib0i714u.jpg",
                             @"http://wx4.sinaimg.cn/thumbnail/bfc243a3gy1febm7tekewj20i20i4aoy.jpg",
                             @"http://wx3.sinaimg.cn/thumbnail/bfc243a3gy1febm7usmc8j20i543zngx.jpg",];
-    
-    _highQualityImageUrls = @[@"http://wx1.sinaimg.cn/large/bfc243a3gy1febm7n9eorj20i60hsann.jpg",
+    //http://wx1.sinaimg.cn/large/bfc243a3gy1febm7n9eorj20i60hsann.jpg
+    _highQualityImageUrls = @[@"http://120.76.99.94/UserServerV3/files/paper/522/5064/pdf/03.pdf",
                               @"http://wx3.sinaimg.cn/large/bfc243a3gy1febm7nzbz7j20ib0iek5j.jpg",
                               @"http://wx1.sinaimg.cn/large/bfc243a3gy1febm7orgqfj20i80ht15x.jpg",
                               @"http://wx2.sinaimg.cn/large/bfc243a3gy1febm7pmnk7j20i70jidwo.jpg",
@@ -159,7 +160,7 @@
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
-    self.endImageView = _photoBrowser.endImageView;
+    
     self.scaleImageView.image = self.startImageView.image;
     ImageScaleAnimator *scaleAnimator = [[ImageScaleAnimator alloc] initWithStartView:self.startImageView scaleView:self.scaleImageView endView:self.endImageView isPresented:YES];
     return scaleAnimator;
@@ -193,16 +194,26 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    _photoBrowser = [PhotoBrowser new];
-    _photoBrowser.presentingVC = self;
-    _photoBrowser.delegate = self;
-
-    _photoBrowser.imageUrls = self.highQualityImageUrls;
-    [_photoBrowser showWithIndex:indexPath.item];
+//    [[PhotoBrowser alloc] showWithPresentingVC:self delegate:self index:indexPath.item];
     
+    
+    CGContextDrawPDFReaderController *targetViewCtrl = [[CGContextDrawPDFReaderController alloc] init];
+//    targetViewCtrl.hidesBottomBarWhenPushed = YES;//从第一个页面跳到第二个页面时隐藏tabBar的设置方法
+    targetViewCtrl.titleText = @"H5从入门到精通";
+    targetViewCtrl.fileName = @"Magazine.pdf";
+    
+    [self.navigationController pushViewController:targetViewCtrl animated:YES];
 }
 
 #pragma mark - PhotoBrowserDelegate
+- (NSInteger)numberOfPhotosInPhotoBroswer:(PhotoBrowser *)photoBrowser {
+    return _highQualityImageUrls.count;
+}
+
+- (NSURL *)photoBrowser:(PhotoBrowser *)photoBrowser highQualityUrlForIndex:(NSInteger)index {
+    return [NSURL URLWithString:_highQualityImageUrls[index]];
+}
+
 - (void)photoBrowser:(PhotoBrowser *)photoBrowser dismissAtIndex:(NSInteger)index {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -211,7 +222,7 @@
     return [_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
 }
 
-#pragma mark - PhotoBroswerDelegate
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,16 +9,19 @@
 /* Begin PBXBuildFile section */
 		279196177897D82553A6E0E5 /* libPods-ImagePreviewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */; };
 		D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81D7EC41F8C5C860038A724 /* Main.storyboard */; };
-		D81D7ED01F8CC2A90038A724 /* PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */; };
-		D81D7ED61F8CCF020038A724 /* PBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */; };
-		D843F2B51F8F5C9F0027EC29 /* ImageScaleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D843F2B31F8F5C9E0027EC29 /* ImageScaleAnimator.m */; };
-		D843F2B81F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D843F2B71F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m */; };
-		D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383C1F7F38190087ADA0 /* PhotoBroswer.m */; };
-		D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */; };
-		D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */; };
-		D86038461F7F39230087ADA0 /* ScaleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038451F7F39230087ADA0 /* ScaleAnimator.m */; };
-		D86038491F7F39490087ADA0 /* ScaleAnimatorCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */; };
-		D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */; };
+		D87F19841F909C3300E8FABD /* ImageScaleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19791F909C3300E8FABD /* ImageScaleAnimator.m */; };
+		D87F19851F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F197B1F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m */; };
+		D87F19861F909C3300E8FABD /* PBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F197D1F909C3300E8FABD /* PBCollectionViewCell.m */; };
+		D87F19871F909C3300E8FABD /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F197F1F909C3300E8FABD /* PhotoBroswerLayout.m */; };
+		D87F19881F909C3300E8FABD /* PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19811F909C3300E8FABD /* PhotoBrowser.m */; };
+		D87F19891F909C3300E8FABD /* PhotoBrowserProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19831F909C3300E8FABD /* PhotoBrowserProgressView.m */; };
+		D87F19931F90A86B00E8FABD /* Magazine.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D87F19921F90A86B00E8FABD /* Magazine.pdf */; };
+		D87F19961F90A9F300E8FABD /* CGContextDrawPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19951F90A9F300E8FABD /* CGContextDrawPDFView.m */; };
+		D87F19991F90AEB600E8FABD /* CGContextDrawPDFPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19981F90AEB600E8FABD /* CGContextDrawPDFPageController.m */; };
+		D87F199C1F90B02100E8FABD /* CGContextDrawPDFPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F199B1F90B02100E8FABD /* CGContextDrawPDFPageModel.m */; };
+		D87F199F1F90B17F00E8FABD /* BackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F199E1F90B17F00E8FABD /* BackViewController.m */; };
+		D87F19A21F90B7C500E8FABD /* CGContextDrawPDFReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19A11F90B7C500E8FABD /* CGContextDrawPDFReaderController.m */; };
+		D87F19A71F90C32200E8FABD /* 003.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D87F19A51F90BFD300E8FABD /* 003.pdf */; };
 		D8CD0E341F7F2EC700027EE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */; };
 		D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E361F7F2EC700027EE8 /* ViewController.m */; };
 		D8CD0E3C1F7F2EC700027EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CD0E3B1F7F2EC700027EE8 /* Assets.xcassets */; };
@@ -50,26 +53,30 @@
 		1BB9000E9E9F3EF078908A80 /* Pods-ImagePreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.debug.xcconfig"; sourceTree = "<group>"; };
 		85C6BF364FF9BF2ED846ADCB /* Pods-ImagePreviewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.release.xcconfig"; sourceTree = "<group>"; };
 		D81D7EC51F8C5C860038A724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D81D7ECE1F8CC2A90038A724 /* PhotoBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowser.h; sourceTree = "<group>"; };
-		D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowser.m; sourceTree = "<group>"; };
-		D81D7ED41F8CCF020038A724 /* PBCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBCollectionViewCell.h; sourceTree = "<group>"; };
-		D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBCollectionViewCell.m; sourceTree = "<group>"; };
-		D843F2B31F8F5C9E0027EC29 /* ImageScaleAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimator.m; sourceTree = "<group>"; };
-		D843F2B41F8F5C9E0027EC29 /* ImageScaleAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimator.h; sourceTree = "<group>"; };
-		D843F2B61F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimatorCoordinator.h; sourceTree = "<group>"; };
-		D843F2B71F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimatorCoordinator.m; sourceTree = "<group>"; };
-		D860383B1F7F38190087ADA0 /* PhotoBroswer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswer.h; sourceTree = "<group>"; };
-		D860383C1F7F38190087ADA0 /* PhotoBroswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswer.m; sourceTree = "<group>"; };
-		D860383E1F7F383F0087ADA0 /* PhotoBrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserCell.h; sourceTree = "<group>"; };
-		D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserCell.m; sourceTree = "<group>"; };
-		D86038411F7F38FD0087ADA0 /* PhotoBrowserProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserProgressView.h; sourceTree = "<group>"; };
-		D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserProgressView.m; sourceTree = "<group>"; };
-		D86038441F7F39230087ADA0 /* ScaleAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleAnimator.h; sourceTree = "<group>"; };
-		D86038451F7F39230087ADA0 /* ScaleAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleAnimator.m; sourceTree = "<group>"; };
-		D86038471F7F39490087ADA0 /* ScaleAnimatorCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleAnimatorCoordinator.h; sourceTree = "<group>"; };
-		D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleAnimatorCoordinator.m; sourceTree = "<group>"; };
-		D860384E1F7F6E3A0087ADA0 /* PhotoBroswerLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerLayout.h; sourceTree = "<group>"; };
-		D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswerLayout.m; sourceTree = "<group>"; };
+		D87F19781F909C3300E8FABD /* ImageScaleAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimator.h; sourceTree = "<group>"; };
+		D87F19791F909C3300E8FABD /* ImageScaleAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimator.m; sourceTree = "<group>"; };
+		D87F197A1F909C3300E8FABD /* ImageScaleAnimatorCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimatorCoordinator.h; sourceTree = "<group>"; };
+		D87F197B1F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimatorCoordinator.m; sourceTree = "<group>"; };
+		D87F197C1F909C3300E8FABD /* PBCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCollectionViewCell.h; sourceTree = "<group>"; };
+		D87F197D1F909C3300E8FABD /* PBCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBCollectionViewCell.m; sourceTree = "<group>"; };
+		D87F197E1F909C3300E8FABD /* PhotoBroswerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerLayout.h; sourceTree = "<group>"; };
+		D87F197F1F909C3300E8FABD /* PhotoBroswerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBroswerLayout.m; sourceTree = "<group>"; };
+		D87F19801F909C3300E8FABD /* PhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowser.h; sourceTree = "<group>"; };
+		D87F19811F909C3300E8FABD /* PhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowser.m; sourceTree = "<group>"; };
+		D87F19821F909C3300E8FABD /* PhotoBrowserProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserProgressView.h; sourceTree = "<group>"; };
+		D87F19831F909C3300E8FABD /* PhotoBrowserProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserProgressView.m; sourceTree = "<group>"; };
+		D87F19921F90A86B00E8FABD /* Magazine.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Magazine.pdf; sourceTree = "<group>"; };
+		D87F19941F90A9F300E8FABD /* CGContextDrawPDFView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextDrawPDFView.h; sourceTree = "<group>"; };
+		D87F19951F90A9F300E8FABD /* CGContextDrawPDFView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextDrawPDFView.m; sourceTree = "<group>"; };
+		D87F19971F90AEB600E8FABD /* CGContextDrawPDFPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextDrawPDFPageController.h; sourceTree = "<group>"; };
+		D87F19981F90AEB600E8FABD /* CGContextDrawPDFPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextDrawPDFPageController.m; sourceTree = "<group>"; };
+		D87F199A1F90B02100E8FABD /* CGContextDrawPDFPageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextDrawPDFPageModel.h; sourceTree = "<group>"; };
+		D87F199B1F90B02100E8FABD /* CGContextDrawPDFPageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextDrawPDFPageModel.m; sourceTree = "<group>"; };
+		D87F199D1F90B17F00E8FABD /* BackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackViewController.h; sourceTree = "<group>"; };
+		D87F199E1F90B17F00E8FABD /* BackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackViewController.m; sourceTree = "<group>"; };
+		D87F19A01F90B7C500E8FABD /* CGContextDrawPDFReaderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextDrawPDFReaderController.h; sourceTree = "<group>"; };
+		D87F19A11F90B7C500E8FABD /* CGContextDrawPDFReaderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextDrawPDFReaderController.m; sourceTree = "<group>"; };
+		D87F19A51F90BFD300E8FABD /* 003.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 003.pdf; sourceTree = "<group>"; };
 		D8CD0E2F1F7F2EC700027EE8 /* ImagePreviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePreviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD0E321F7F2EC700027EE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,30 +140,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D81D7EC71F8C67900038A724 /* WebImageHelper */ = {
+		D87F19771F909C3300E8FABD /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				D87F19781F909C3300E8FABD /* ImageScaleAnimator.h */,
+				D87F19791F909C3300E8FABD /* ImageScaleAnimator.m */,
+				D87F197A1F909C3300E8FABD /* ImageScaleAnimatorCoordinator.h */,
+				D87F197B1F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m */,
+				D87F197C1F909C3300E8FABD /* PBCollectionViewCell.h */,
+				D87F197D1F909C3300E8FABD /* PBCollectionViewCell.m */,
+				D87F197E1F909C3300E8FABD /* PhotoBroswerLayout.h */,
+				D87F197F1F909C3300E8FABD /* PhotoBroswerLayout.m */,
+				D87F19801F909C3300E8FABD /* PhotoBrowser.h */,
+				D87F19811F909C3300E8FABD /* PhotoBrowser.m */,
+				D87F19821F909C3300E8FABD /* PhotoBrowserProgressView.h */,
+				D87F19831F909C3300E8FABD /* PhotoBrowserProgressView.m */,
 			);
-			path = WebImageHelper;
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
-		D860383A1F7F37CF0087ADA0 /* ZQPhotoBrowser */ = {
+		D87F198A1F909C5E00E8FABD /* PDFReader */ = {
 			isa = PBXGroup;
 			children = (
-				D860384E1F7F6E3A0087ADA0 /* PhotoBroswerLayout.h */,
-				D860384F1F7F6E3A0087ADA0 /* PhotoBroswerLayout.m */,
-				D860383B1F7F38190087ADA0 /* PhotoBroswer.h */,
-				D860383C1F7F38190087ADA0 /* PhotoBroswer.m */,
-				D860383E1F7F383F0087ADA0 /* PhotoBrowserCell.h */,
-				D860383F1F7F383F0087ADA0 /* PhotoBrowserCell.m */,
-				D86038411F7F38FD0087ADA0 /* PhotoBrowserProgressView.h */,
-				D86038421F7F38FD0087ADA0 /* PhotoBrowserProgressView.m */,
-				D86038441F7F39230087ADA0 /* ScaleAnimator.h */,
-				D86038451F7F39230087ADA0 /* ScaleAnimator.m */,
-				D86038471F7F39490087ADA0 /* ScaleAnimatorCoordinator.h */,
-				D86038481F7F39490087ADA0 /* ScaleAnimatorCoordinator.m */,
+				D87F19A01F90B7C500E8FABD /* CGContextDrawPDFReaderController.h */,
+				D87F19A11F90B7C500E8FABD /* CGContextDrawPDFReaderController.m */,
+				D87F19941F90A9F300E8FABD /* CGContextDrawPDFView.h */,
+				D87F19951F90A9F300E8FABD /* CGContextDrawPDFView.m */,
+				D87F19971F90AEB600E8FABD /* CGContextDrawPDFPageController.h */,
+				D87F19981F90AEB600E8FABD /* CGContextDrawPDFPageController.m */,
+				D87F199A1F90B02100E8FABD /* CGContextDrawPDFPageModel.h */,
+				D87F199B1F90B02100E8FABD /* CGContextDrawPDFPageModel.m */,
+				D87F199D1F90B17F00E8FABD /* BackViewController.h */,
+				D87F199E1F90B17F00E8FABD /* BackViewController.m */,
 			);
-			path = ZQPhotoBrowser;
+			path = PDFReader;
+			sourceTree = "<group>";
+		};
+		D87F19911F90A86B00E8FABD /* PDFResource */ = {
+			isa = PBXGroup;
+			children = (
+				D87F19921F90A86B00E8FABD /* Magazine.pdf */,
+				D87F19A51F90BFD300E8FABD /* 003.pdf */,
+			);
+			path = PDFResource;
 			sourceTree = "<group>";
 		};
 		D8CD0E261F7F2EC700027EE8 = {
@@ -184,20 +210,13 @@
 		D8CD0E311F7F2EC700027EE8 /* ImagePreviewer */ = {
 			isa = PBXGroup;
 			children = (
-				D81D7EC71F8C67900038A724 /* WebImageHelper */,
-				D860383A1F7F37CF0087ADA0 /* ZQPhotoBrowser */,
+				D87F19911F90A86B00E8FABD /* PDFResource */,
+				D87F198A1F909C5E00E8FABD /* PDFReader */,
+				D87F19771F909C3300E8FABD /* PhotoBrowser */,
 				D8CD0E321F7F2EC700027EE8 /* AppDelegate.h */,
 				D8CD0E331F7F2EC700027EE8 /* AppDelegate.m */,
 				D8CD0E351F7F2EC700027EE8 /* ViewController.h */,
 				D8CD0E361F7F2EC700027EE8 /* ViewController.m */,
-				D81D7ECE1F8CC2A90038A724 /* PhotoBrowser.h */,
-				D81D7ECF1F8CC2A90038A724 /* PhotoBrowser.m */,
-				D81D7ED41F8CCF020038A724 /* PBCollectionViewCell.h */,
-				D81D7ED51F8CCF020038A724 /* PBCollectionViewCell.m */,
-				D843F2B41F8F5C9E0027EC29 /* ImageScaleAnimator.h */,
-				D843F2B31F8F5C9E0027EC29 /* ImageScaleAnimator.m */,
-				D843F2B61F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.h */,
-				D843F2B71F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m */,
 				D8FD40531F8B8072002A4B66 /* CollectionViewCell.h */,
 				D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */,
 				D8CD0E3B1F7F2EC700027EE8 /* Assets.xcassets */,
@@ -336,8 +355,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87F19931F90A86B00E8FABD /* Magazine.pdf in Resources */,
 				D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */,
 				D8CD0E3F1F7F2EC700027EE8 /* LaunchScreen.storyboard in Resources */,
+				D87F19A71F90C32200E8FABD /* 003.pdf in Resources */,
 				D8CD0E3C1F7F2EC700027EE8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,20 +435,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87F19881F909C3300E8FABD /* PhotoBrowser.m in Sources */,
+				D87F19961F90A9F300E8FABD /* CGContextDrawPDFView.m in Sources */,
+				D87F19A21F90B7C500E8FABD /* CGContextDrawPDFReaderController.m in Sources */,
+				D87F19891F909C3300E8FABD /* PhotoBrowserProgressView.m in Sources */,
 				D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */,
-				D86038431F7F38FD0087ADA0 /* PhotoBrowserProgressView.m in Sources */,
-				D86038401F7F383F0087ADA0 /* PhotoBrowserCell.m in Sources */,
-				D81D7ED01F8CC2A90038A724 /* PhotoBrowser.m in Sources */,
-				D843F2B51F8F5C9F0027EC29 /* ImageScaleAnimator.m in Sources */,
 				D8CD0E421F7F2EC700027EE8 /* main.m in Sources */,
-				D86038501F7F6E3A0087ADA0 /* PhotoBroswerLayout.m in Sources */,
-				D81D7ED61F8CCF020038A724 /* PBCollectionViewCell.m in Sources */,
-				D843F2B81F8F795D0027EC29 /* ImageScaleAnimatorCoordinator.m in Sources */,
-				D860383D1F7F38190087ADA0 /* PhotoBroswer.m in Sources */,
 				D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */,
-				D86038461F7F39230087ADA0 /* ScaleAnimator.m in Sources */,
+				D87F19871F909C3300E8FABD /* PhotoBroswerLayout.m in Sources */,
+				D87F19991F90AEB600E8FABD /* CGContextDrawPDFPageController.m in Sources */,
+				D87F19841F909C3300E8FABD /* ImageScaleAnimator.m in Sources */,
+				D87F19851F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m in Sources */,
 				D8CD0E341F7F2EC700027EE8 /* AppDelegate.m in Sources */,
-				D86038491F7F39490087ADA0 /* ScaleAnimatorCoordinator.m in Sources */,
+				D87F199C1F90B02100E8FABD /* CGContextDrawPDFPageModel.m in Sources */,
+				D87F19861F909C3300E8FABD /* PBCollectionViewCell.m in Sources */,
+				D87F199F1F90B17F00E8FABD /* BackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
