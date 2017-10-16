@@ -12,6 +12,7 @@
 
 @interface CGContextDrawPDFPageModel ()
 
+/// 当前的vc
 @property (nonatomic,strong) UIViewController *currentViewController;
 
 @end
@@ -26,33 +27,35 @@
     return self;
 }
 
-- (CGContextDrawPDFPageController *)viewControllerAtIndex:(NSUInteger)pageNO {
-    // Return the data view controller for the given index.
+- (CGContextDrawPDFPageController *)viewControllerAtIndex:(NSUInteger)index {
+    // 总页数
     long pageSum = CGPDFDocumentGetNumberOfPages(pdfDocument);
-    if (pageSum == 0 || pageNO >= pageSum + 1) {
+    if (pageSum == 0 || index >= pageSum + 1) {
         return nil;
     }
     //  Create a new view controller and pass suitable data.
     CGContextDrawPDFPageController *pageController = [CGContextDrawPDFPageController new];
     pageController.pdfDocument = pdfDocument;
-    pageController.pageNO = pageNO;
+    pageController.pageNum = index;
     
     return pageController;
 }
 
 - (NSUInteger)indexOfViewController:(CGContextDrawPDFPageController *)viewController {
-    return viewController.pageNO;
+    return viewController.pageNum;
 }
 
 #pragma mark 如果要每页的背面显示与正面相同的风格，而不是默认的白，需要设置pageController的doubleSize属性为YES，同时在下面的两个代理方法中设置BackViewController
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[CGContextDrawPDFPageController class]]) {
-        self.currentViewController = viewController;
-        
-        BackViewController *backViewController = [BackViewController new];
-        [backViewController updateWithViewController:viewController];
-        return backViewController;
-    }
+//    if ([viewController isKindOfClass:[CGContextDrawPDFPageController class]]) {
+//        self.currentViewController = viewController;
+//
+//        BackViewController *backViewController = [BackViewController new];
+//        [backViewController updateWithViewController:viewController];
+//        return backViewController;
+//    }
+    
+    self.currentViewController = viewController;
     
     //  self.currentViewController保存的是后一个CGContextDrawPDFPageController，如果直接用viewController实际指的是backViewController，而其没有indexOfViewController：等方法程序会崩掉。
     NSUInteger index = [self indexOfViewController:(CGContextDrawPDFPageController *)self.currentViewController];
@@ -64,13 +67,16 @@
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[CGContextDrawPDFPageController class]]) {
-        self.currentViewController = viewController;
-        
-        BackViewController *backViewController = [BackViewController new];
-        [backViewController updateWithViewController:viewController];
-        return backViewController;
-    }
+//    if ([viewController isKindOfClass:[CGContextDrawPDFPageController class]]) {
+//        self.currentViewController = viewController;
+//
+//        BackViewController *backViewController = [BackViewController new];
+//        [backViewController updateWithViewController:viewController];
+//        return backViewController;
+//    }
+    
+    self.currentViewController = viewController;
+    
     //  self.currentViewController保存的是前一个CGContextDrawPDFPageController，如果直接用viewController实际指的是backViewController，而其没有indexOfViewController：等方法程序会崩掉。
     NSUInteger index = [self indexOfViewController: (CGContextDrawPDFPageController *)self.currentViewController];
     if (index == NSNotFound) {

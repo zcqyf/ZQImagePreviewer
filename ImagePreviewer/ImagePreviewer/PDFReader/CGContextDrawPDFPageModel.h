@@ -15,9 +15,13 @@
     CGPDFDocumentRef pdfDocument;
 }
 
-- (instancetype)initWithPDFDocument:(CGPDFDocumentRef)pdfDocument;
+/// 根据 CGPDFDocumentRef 初始化
+- (instancetype)initWithPDFDocument:(CGPDFDocumentRef)pdfDoc;
 
+/// 获取对应 index 的 CGContextDrawPDFPageController
 - (CGContextDrawPDFPageController *)viewControllerAtIndex:(NSUInteger)index;
+
+/// 返回 CGContextDrawPDFPageController 对应的 index
 - (NSUInteger)indexOfViewController:(CGContextDrawPDFPageController *)viewController;
 
 @end

@@ -8,6 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		279196177897D82553A6E0E5 /* libPods-ImagePreviewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */; };
+		D813C4D01F94BC3F0027B5D8 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C49A1F94BC3F0027B5D8 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D813C4D11F94BC3F0027B5D8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C49C1F94BC3F0027B5D8 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D813C4D21F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4A01F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m */; };
+		D813C4D31F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4A21F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.m */; };
+		D813C4D41F94BC3F0027B5D8 /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4A41F94BC3F0027B5D8 /* CXHTMLDocument.m */; };
+		D813C4D51F94BC3F0027B5D8 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4A61F94BC3F0027B5D8 /* CXMLDocument.m */; };
+		D813C4D61F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4A81F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.m */; };
+		D813C4D71F94BC3F0027B5D8 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4AA1F94BC3F0027B5D8 /* CXMLElement.m */; };
+		D813C4D81F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4AC1F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.m */; };
+		D813C4D91F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4AE1F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.m */; };
+		D813C4DA1F94BC3F0027B5D8 /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4B01F94BC3F0027B5D8 /* CXMLNamespaceNode.m */; };
+		D813C4DB1F94BC3F0027B5D8 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4B21F94BC3F0027B5D8 /* CXMLNode.m */; };
+		D813C4DC1F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4B41F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.m */; };
+		D813C4DD1F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4B61F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.m */; };
+		D813C4DE1F94BC3F0027B5D8 /* CXMLUnsupportedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4B81F94BC3F0027B5D8 /* CXMLUnsupportedNode.m */; };
+		D813C4DF1F94BC3F0027B5D8 /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4BB1F94BC3F0027B5D8 /* CTidy.m */; };
+		D813C4E01F94BC3F0027B5D8 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4BE1F94BC3F0027B5D8 /* UIImage+ImageEffects.m */; };
+		D813C4E11F94BC3F0027B5D8 /* UIView+XDSHyperLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4C01F94BC3F0027B5D8 /* UIView+XDSHyperLink.m */; };
+		D813C4E21F94BC3F0027B5D8 /* mdjyml.txt in Resources */ = {isa = PBXBuildFile; fileRef = D813C4C31F94BC3F0027B5D8 /* mdjyml.txt */; };
+		D813C4E31F94BC3F0027B5D8 /* zoubianzhongguo.epub in Resources */ = {isa = PBXBuildFile; fileRef = D813C4C41F94BC3F0027B5D8 /* zoubianzhongguo.epub */; };
+		D813C4E51F94BC3F0027B5D8 /* 妖神记.txt in Resources */ = {isa = PBXBuildFile; fileRef = D813C4C61F94BC3F0027B5D8 /* 妖神记.txt */; };
+		D813C4E61F94BC3F0027B5D8 /* 每天懂一点好玩心理学.epub in Resources */ = {isa = PBXBuildFile; fileRef = D813C4C71F94BC3F0027B5D8 /* 每天懂一点好玩心理学.epub */; };
+		D813C4E71F94BC3F0027B5D8 /* 华文彩云.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D813C4CB1F94BC3F0027B5D8 /* 华文彩云.ttf */; };
+		D813C4E81F94BC3F0027B5D8 /* 华文新魏.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D813C4CC1F94BC3F0027B5D8 /* 华文新魏.ttf */; };
+		D813C4E91F94BC3F0027B5D8 /* 华文琥珀.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D813C4CD1F94BC3F0027B5D8 /* 华文琥珀.ttf */; };
+		D813C4EA1F94BC3F0027B5D8 /* 华文行楷.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D813C4CE1F94BC3F0027B5D8 /* 华文行楷.ttf */; };
+		D813C4EF1F94C0840027B5D8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D813C4ED1F94BE6A0027B5D8 /* libxml2.tbd */; };
+		D813C4F31F94C3CF0027B5D8 /* YGBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4F21F94C3CF0027B5D8 /* YGBookModel.m */; };
+		D813C4F61F94C3E90027B5D8 /* YGChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4F51F94C3E90027B5D8 /* YGChapterModel.m */; };
+		D813C4F91F94C40D0027B5D8 /* YGRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4F81F94C40D0027B5D8 /* YGRecordModel.m */; };
+		D813C4FC1F94C4240027B5D8 /* YGMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4FB1F94C4240027B5D8 /* YGMarkModel.m */; };
+		D813C4FF1F94C4440027B5D8 /* YGNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4FE1F94C4440027B5D8 /* YGNoteModel.m */; };
 		D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81D7EC41F8C5C860038A724 /* Main.storyboard */; };
 		D87F19841F909C3300E8FABD /* ImageScaleAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F19791F909C3300E8FABD /* ImageScaleAnimator.m */; };
 		D87F19851F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D87F197B1F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m */; };
@@ -52,6 +84,65 @@
 /* Begin PBXFileReference section */
 		1BB9000E9E9F3EF078908A80 /* Pods-ImagePreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.debug.xcconfig"; sourceTree = "<group>"; };
 		85C6BF364FF9BF2ED846ADCB /* Pods-ImagePreviewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.release.xcconfig"; sourceTree = "<group>"; };
+		D813C4981F94BC3F0027B5D8 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		D813C4991F94BC3F0027B5D8 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		D813C49A1F94BC3F0027B5D8 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		D813C49B1F94BC3F0027B5D8 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		D813C49C1F94BC3F0027B5D8 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		D813C49F1F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		D813C4A01F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		D813C4A11F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		D813C4A21F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		D813C4A31F94BC3F0027B5D8 /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		D813C4A41F94BC3F0027B5D8 /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		D813C4A51F94BC3F0027B5D8 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		D813C4A61F94BC3F0027B5D8 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		D813C4A71F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		D813C4A81F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		D813C4A91F94BC3F0027B5D8 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		D813C4AA1F94BC3F0027B5D8 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		D813C4AB1F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		D813C4AC1F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		D813C4AD1F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		D813C4AE1F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		D813C4AF1F94BC3F0027B5D8 /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		D813C4B01F94BC3F0027B5D8 /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		D813C4B11F94BC3F0027B5D8 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		D813C4B21F94BC3F0027B5D8 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		D813C4B31F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		D813C4B41F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		D813C4B51F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		D813C4B61F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		D813C4B71F94BC3F0027B5D8 /* CXMLUnsupportedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLUnsupportedNode.h; sourceTree = "<group>"; };
+		D813C4B81F94BC3F0027B5D8 /* CXMLUnsupportedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLUnsupportedNode.m; sourceTree = "<group>"; };
+		D813C4BA1F94BC3F0027B5D8 /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		D813C4BB1F94BC3F0027B5D8 /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		D813C4BC1F94BC3F0027B5D8 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		D813C4BD1F94BC3F0027B5D8 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D813C4BE1F94BC3F0027B5D8 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D813C4BF1F94BC3F0027B5D8 /* UIView+XDSHyperLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XDSHyperLink.h"; sourceTree = "<group>"; };
+		D813C4C01F94BC3F0027B5D8 /* UIView+XDSHyperLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XDSHyperLink.m"; sourceTree = "<group>"; };
+		D813C4C31F94BC3F0027B5D8 /* mdjyml.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mdjyml.txt; sourceTree = "<group>"; };
+		D813C4C41F94BC3F0027B5D8 /* zoubianzhongguo.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = zoubianzhongguo.epub; sourceTree = "<group>"; };
+		D813C4C61F94BC3F0027B5D8 /* 妖神记.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "妖神记.txt"; sourceTree = "<group>"; };
+		D813C4C71F94BC3F0027B5D8 /* 每天懂一点好玩心理学.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "每天懂一点好玩心理学.epub"; sourceTree = "<group>"; };
+		D813C4CB1F94BC3F0027B5D8 /* 华文彩云.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文彩云.ttf"; sourceTree = "<group>"; };
+		D813C4CC1F94BC3F0027B5D8 /* 华文新魏.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文新魏.ttf"; sourceTree = "<group>"; };
+		D813C4CD1F94BC3F0027B5D8 /* 华文琥珀.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文琥珀.ttf"; sourceTree = "<group>"; };
+		D813C4CE1F94BC3F0027B5D8 /* 华文行楷.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文行楷.ttf"; sourceTree = "<group>"; };
+		D813C4EB1F94BC690027B5D8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D813C4ED1F94BE6A0027B5D8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		D813C4F01F94C2370027B5D8 /* YGReaderHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReaderHeader.pch; sourceTree = "<group>"; };
+		D813C4F11F94C3CF0027B5D8 /* YGBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBookModel.h; sourceTree = "<group>"; };
+		D813C4F21F94C3CF0027B5D8 /* YGBookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBookModel.m; sourceTree = "<group>"; };
+		D813C4F41F94C3E90027B5D8 /* YGChapterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGChapterModel.h; sourceTree = "<group>"; };
+		D813C4F51F94C3E90027B5D8 /* YGChapterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGChapterModel.m; sourceTree = "<group>"; };
+		D813C4F71F94C40D0027B5D8 /* YGRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGRecordModel.h; sourceTree = "<group>"; };
+		D813C4F81F94C40D0027B5D8 /* YGRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGRecordModel.m; sourceTree = "<group>"; };
+		D813C4FA1F94C4240027B5D8 /* YGMarkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMarkModel.h; sourceTree = "<group>"; };
+		D813C4FB1F94C4240027B5D8 /* YGMarkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMarkModel.m; sourceTree = "<group>"; };
+		D813C4FD1F94C4440027B5D8 /* YGNoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGNoteModel.h; sourceTree = "<group>"; };
+		D813C4FE1F94C4440027B5D8 /* YGNoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGNoteModel.m; sourceTree = "<group>"; };
 		D81D7EC51F8C5C860038A724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D87F19781F909C3300E8FABD /* ImageScaleAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScaleAnimator.h; sourceTree = "<group>"; };
 		D87F19791F909C3300E8FABD /* ImageScaleAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScaleAnimator.m; sourceTree = "<group>"; };
@@ -102,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D813C4EF1F94C0840027B5D8 /* libxml2.tbd in Frameworks */,
 				279196177897D82553A6E0E5 /* libPods-ImagePreviewer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,9 +227,179 @@
 		CE0E290851E98BD1D3B56201 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D813C4ED1F94BE6A0027B5D8 /* libxml2.tbd */,
+				D813C4EB1F94BC690027B5D8 /* libz.tbd */,
 				E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D813C4931F94B95A0027B5D8 /* EpubAndTextReader */ = {
+			isa = PBXGroup;
+			children = (
+				D813C4CA1F94BC3F0027B5D8 /* Typeface */,
+				D813C4941F94BC3F0027B5D8 /* YGReaderKit */,
+				D813C4CF1F94BC3F0027B5D8 /* YGReadMenu */,
+			);
+			path = EpubAndTextReader;
+			sourceTree = "<group>";
+		};
+		D813C4941F94BC3F0027B5D8 /* YGReaderKit */ = {
+			isa = PBXGroup;
+			children = (
+				D813C4951F94BC3F0027B5D8 /* Controller */,
+				D813C4961F94BC3F0027B5D8 /* Core */,
+				D813C4971F94BC3F0027B5D8 /* External */,
+				D813C4C11F94BC3F0027B5D8 /* Model */,
+				D813C4C21F94BC3F0027B5D8 /* Resource */,
+				D813C4C81F94BC3F0027B5D8 /* Util */,
+				D813C4C91F94BC3F0027B5D8 /* View */,
+				D813C4F01F94C2370027B5D8 /* YGReaderHeader.pch */,
+			);
+			path = YGReaderKit;
+			sourceTree = "<group>";
+		};
+		D813C4951F94BC3F0027B5D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D813C4961F94BC3F0027B5D8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D813C4971F94BC3F0027B5D8 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D813C49D1F94BC3F0027B5D8 /* TouchXML */,
+				D813C4981F94BC3F0027B5D8 /* GTMDefines.h */,
+				D813C4991F94BC3F0027B5D8 /* GTMNSString+HTML.h */,
+				D813C49A1F94BC3F0027B5D8 /* GTMNSString+HTML.m */,
+				D813C49B1F94BC3F0027B5D8 /* NSString+HTML.h */,
+				D813C49C1F94BC3F0027B5D8 /* NSString+HTML.m */,
+				D813C4BD1F94BC3F0027B5D8 /* UIImage+ImageEffects.h */,
+				D813C4BE1F94BC3F0027B5D8 /* UIImage+ImageEffects.m */,
+				D813C4BF1F94BC3F0027B5D8 /* UIView+XDSHyperLink.h */,
+				D813C4C01F94BC3F0027B5D8 /* UIView+XDSHyperLink.m */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D813C49D1F94BC3F0027B5D8 /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				D813C49E1F94BC3F0027B5D8 /* Creation */,
+				D813C4A31F94BC3F0027B5D8 /* CXHTMLDocument.h */,
+				D813C4A41F94BC3F0027B5D8 /* CXHTMLDocument.m */,
+				D813C4A51F94BC3F0027B5D8 /* CXMLDocument.h */,
+				D813C4A61F94BC3F0027B5D8 /* CXMLDocument.m */,
+				D813C4A71F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.h */,
+				D813C4A81F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.m */,
+				D813C4A91F94BC3F0027B5D8 /* CXMLElement.h */,
+				D813C4AA1F94BC3F0027B5D8 /* CXMLElement.m */,
+				D813C4AB1F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.h */,
+				D813C4AC1F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.m */,
+				D813C4AD1F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.h */,
+				D813C4AE1F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.m */,
+				D813C4AF1F94BC3F0027B5D8 /* CXMLNamespaceNode.h */,
+				D813C4B01F94BC3F0027B5D8 /* CXMLNamespaceNode.m */,
+				D813C4B11F94BC3F0027B5D8 /* CXMLNode.h */,
+				D813C4B21F94BC3F0027B5D8 /* CXMLNode.m */,
+				D813C4B31F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.h */,
+				D813C4B41F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.m */,
+				D813C4B51F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.h */,
+				D813C4B61F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.m */,
+				D813C4B71F94BC3F0027B5D8 /* CXMLUnsupportedNode.h */,
+				D813C4B81F94BC3F0027B5D8 /* CXMLUnsupportedNode.m */,
+				D813C4B91F94BC3F0027B5D8 /* Tidy */,
+				D813C4BC1F94BC3F0027B5D8 /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+		D813C49E1F94BC3F0027B5D8 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				D813C49F1F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.h */,
+				D813C4A01F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m */,
+				D813C4A11F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.h */,
+				D813C4A21F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.m */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		D813C4B91F94BC3F0027B5D8 /* Tidy */ = {
+			isa = PBXGroup;
+			children = (
+				D813C4BA1F94BC3F0027B5D8 /* CTidy.h */,
+				D813C4BB1F94BC3F0027B5D8 /* CTidy.m */,
+			);
+			path = Tidy;
+			sourceTree = "<group>";
+		};
+		D813C4C11F94BC3F0027B5D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D813C4F11F94C3CF0027B5D8 /* YGBookModel.h */,
+				D813C4F21F94C3CF0027B5D8 /* YGBookModel.m */,
+				D813C4F41F94C3E90027B5D8 /* YGChapterModel.h */,
+				D813C4F51F94C3E90027B5D8 /* YGChapterModel.m */,
+				D813C4F71F94C40D0027B5D8 /* YGRecordModel.h */,
+				D813C4F81F94C40D0027B5D8 /* YGRecordModel.m */,
+				D813C4FA1F94C4240027B5D8 /* YGMarkModel.h */,
+				D813C4FB1F94C4240027B5D8 /* YGMarkModel.m */,
+				D813C4FD1F94C4440027B5D8 /* YGNoteModel.h */,
+				D813C4FE1F94C4440027B5D8 /* YGNoteModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D813C4C21F94BC3F0027B5D8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D813C4C31F94BC3F0027B5D8 /* mdjyml.txt */,
+				D813C4C41F94BC3F0027B5D8 /* zoubianzhongguo.epub */,
+				D813C4C61F94BC3F0027B5D8 /* 妖神记.txt */,
+				D813C4C71F94BC3F0027B5D8 /* 每天懂一点好玩心理学.epub */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D813C4C81F94BC3F0027B5D8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D813C4C91F94BC3F0027B5D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D813C4CA1F94BC3F0027B5D8 /* Typeface */ = {
+			isa = PBXGroup;
+			children = (
+				D813C4CB1F94BC3F0027B5D8 /* 华文彩云.ttf */,
+				D813C4CC1F94BC3F0027B5D8 /* 华文新魏.ttf */,
+				D813C4CD1F94BC3F0027B5D8 /* 华文琥珀.ttf */,
+				D813C4CE1F94BC3F0027B5D8 /* 华文行楷.ttf */,
+			);
+			path = Typeface;
+			sourceTree = "<group>";
+		};
+		D813C4CF1F94BC3F0027B5D8 /* YGReadMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YGReadMenu;
 			sourceTree = "<group>";
 		};
 		D87F19771F909C3300E8FABD /* PhotoBrowser */ = {
@@ -210,6 +472,7 @@
 		D8CD0E311F7F2EC700027EE8 /* ImagePreviewer */ = {
 			isa = PBXGroup;
 			children = (
+				D813C4931F94B95A0027B5D8 /* EpubAndTextReader */,
 				D87F19911F90A86B00E8FABD /* PDFResource */,
 				D87F198A1F909C5E00E8FABD /* PDFReader */,
 				D87F19771F909C3300E8FABD /* PhotoBrowser */,
@@ -355,11 +618,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D813C4E51F94BC3F0027B5D8 /* 妖神记.txt in Resources */,
 				D87F19931F90A86B00E8FABD /* Magazine.pdf in Resources */,
 				D81D7EC61F8C5C860038A724 /* Main.storyboard in Resources */,
+				D813C4E81F94BC3F0027B5D8 /* 华文新魏.ttf in Resources */,
+				D813C4E71F94BC3F0027B5D8 /* 华文彩云.ttf in Resources */,
+				D813C4EA1F94BC3F0027B5D8 /* 华文行楷.ttf in Resources */,
 				D8CD0E3F1F7F2EC700027EE8 /* LaunchScreen.storyboard in Resources */,
 				D87F19A71F90C32200E8FABD /* 003.pdf in Resources */,
 				D8CD0E3C1F7F2EC700027EE8 /* Assets.xcassets in Resources */,
+				D813C4E91F94BC3F0027B5D8 /* 华文琥珀.ttf in Resources */,
+				D813C4E61F94BC3F0027B5D8 /* 每天懂一点好玩心理学.epub in Resources */,
+				D813C4E31F94BC3F0027B5D8 /* zoubianzhongguo.epub in Resources */,
+				D813C4E21F94BC3F0027B5D8 /* mdjyml.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,21 +706,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D813C4E01F94BC3F0027B5D8 /* UIImage+ImageEffects.m in Sources */,
+				D813C4F61F94C3E90027B5D8 /* YGChapterModel.m in Sources */,
+				D813C4F91F94C40D0027B5D8 /* YGRecordModel.m in Sources */,
+				D813C4D31F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.m in Sources */,
+				D813C4FC1F94C4240027B5D8 /* YGMarkModel.m in Sources */,
 				D87F19881F909C3300E8FABD /* PhotoBrowser.m in Sources */,
+				D813C4D21F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m in Sources */,
 				D87F19961F90A9F300E8FABD /* CGContextDrawPDFView.m in Sources */,
+				D813C4DF1F94BC3F0027B5D8 /* CTidy.m in Sources */,
 				D87F19A21F90B7C500E8FABD /* CGContextDrawPDFReaderController.m in Sources */,
 				D87F19891F909C3300E8FABD /* PhotoBrowserProgressView.m in Sources */,
+				D813C4D71F94BC3F0027B5D8 /* CXMLElement.m in Sources */,
+				D813C4DD1F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.m in Sources */,
+				D813C4E11F94BC3F0027B5D8 /* UIView+XDSHyperLink.m in Sources */,
+				D813C4D41F94BC3F0027B5D8 /* CXHTMLDocument.m in Sources */,
 				D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */,
+				D813C4DA1F94BC3F0027B5D8 /* CXMLNamespaceNode.m in Sources */,
+				D813C4D11F94BC3F0027B5D8 /* NSString+HTML.m in Sources */,
 				D8CD0E421F7F2EC700027EE8 /* main.m in Sources */,
 				D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */,
 				D87F19871F909C3300E8FABD /* PhotoBroswerLayout.m in Sources */,
+				D813C4DE1F94BC3F0027B5D8 /* CXMLUnsupportedNode.m in Sources */,
 				D87F19991F90AEB600E8FABD /* CGContextDrawPDFPageController.m in Sources */,
 				D87F19841F909C3300E8FABD /* ImageScaleAnimator.m in Sources */,
 				D87F19851F909C3300E8FABD /* ImageScaleAnimatorCoordinator.m in Sources */,
+				D813C4FF1F94C4440027B5D8 /* YGNoteModel.m in Sources */,
+				D813C4F31F94C3CF0027B5D8 /* YGBookModel.m in Sources */,
 				D8CD0E341F7F2EC700027EE8 /* AppDelegate.m in Sources */,
+				D813C4D91F94BC3F0027B5D8 /* CXMLElement_ElementTreeExtensions.m in Sources */,
 				D87F199C1F90B02100E8FABD /* CGContextDrawPDFPageModel.m in Sources */,
+				D813C4D81F94BC3F0027B5D8 /* CXMLElement_CreationExtensions.m in Sources */,
+				D813C4D01F94BC3F0027B5D8 /* GTMNSString+HTML.m in Sources */,
+				D813C4D61F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.m in Sources */,
+				D813C4DC1F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.m in Sources */,
+				D813C4DB1F94BC3F0027B5D8 /* CXMLNode.m in Sources */,
 				D87F19861F909C3300E8FABD /* PBCollectionViewCell.m in Sources */,
 				D87F199F1F90B17F00E8FABD /* BackViewController.m in Sources */,
+				D813C4D51F94BC3F0027B5D8 /* CXMLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +846,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -601,6 +896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -615,6 +911,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9RQC3AJ9J;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = ImagePreviewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YG.ImagePreviewer;
@@ -630,6 +931,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9RQC3AJ9J;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = ImagePreviewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YG.ImagePreviewer;

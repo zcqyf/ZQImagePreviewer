@@ -11,7 +11,7 @@
 
 @interface CGContextDrawPDFReaderController : UIViewController
 {
-    UIPageViewController *pageViewCtrl;
+    UIPageViewController *pageController;
     CGContextDrawPDFPageModel *pdfPageModal;
 }
 

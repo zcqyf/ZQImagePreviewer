@@ -9,7 +9,9 @@
 #import "CGContextDrawPDFPageController.h"
 #import "CGContextDrawPDFView.h"
 
-@interface CGContextDrawPDFPageController ()
+@interface CGContextDrawPDFPageController () <UIScrollViewDelegate>
+
+@property (nonatomic,strong) CGContextDrawPDFView *pdfView;
 
 @end
 
@@ -17,13 +19,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createUI];
+    if ([UIDevice currentDevice].systemVersion.floatValue < 11.0) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        self.automaticallyAdjustsScrollViewInsets = NO;
+#pragma clang diagnostic pop
+    }
+    [self setupUI];
 }
 
-- (void)createUI {
-    CGContextDrawPDFView *pdfView = [[CGContextDrawPDFView alloc] initWithFrame:self.view.bounds atPage:self.pageNO withPDFDoc:self.pdfDocument];
-    pdfView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:pdfView];
+- (void)setupUI {
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:scrollView];
+    scrollView.delegate = self;
+    scrollView.minimumZoomScale = 1.0;
+    scrollView.maximumZoomScale = 3.0;
+    scrollView.zoomScale = 1.0;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    
+    //  iOS 11
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0) {
+        scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
+    _pdfView = [[CGContextDrawPDFView alloc] initWithFrame:self.view.bounds atPage:self.pageNum withPDFDoc:self.pdfDocument];
+    _pdfView.backgroundColor = [UIColor whiteColor];
+    [scrollView addSubview:_pdfView];
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return _pdfView;
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+//    [_pdfView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {

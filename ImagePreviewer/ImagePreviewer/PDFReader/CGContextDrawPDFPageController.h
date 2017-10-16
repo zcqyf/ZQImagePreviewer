@@ -12,6 +12,8 @@
 
 /// CGPDFDocumentRef pdfDocument;
 @property (nonatomic,assign) CGPDFDocumentRef pdfDocument;
-@property (nonatomic,assign) long pageNO;
+
+/// page
+@property (nonatomic,assign) long pageNum;
 
 @end

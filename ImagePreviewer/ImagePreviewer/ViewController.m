@@ -194,15 +194,15 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-//    [[PhotoBrowser alloc] showWithPresentingVC:self delegate:self index:indexPath.item];
+    [[PhotoBrowser alloc] showWithPresentingVC:self delegate:self index:indexPath.item];
     
     
-    CGContextDrawPDFReaderController *targetViewCtrl = [[CGContextDrawPDFReaderController alloc] init];
-//    targetViewCtrl.hidesBottomBarWhenPushed = YES;//从第一个页面跳到第二个页面时隐藏tabBar的设置方法
-    targetViewCtrl.titleText = @"H5从入门到精通";
-    targetViewCtrl.fileName = @"Magazine.pdf";
-    
-    [self.navigationController pushViewController:targetViewCtrl animated:YES];
+//    CGContextDrawPDFReaderController *pdfReader = [[CGContextDrawPDFReaderController alloc] init];
+//
+//    pdfReader.titleText = @"H5从入门到精通";
+//    pdfReader.fileName = @"Magazine.pdf";
+//
+//    [self.navigationController pushViewController:pdfReader animated:YES];
 }
 
 #pragma mark - PhotoBrowserDelegate

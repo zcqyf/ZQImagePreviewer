@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface CGContextDrawPDFView : UIView {
+    /// PDF文件环境
     CGPDFDocumentRef pdfDocument;
-    long pageNO;
+    /// 页码
+    long pageNum;
 }
 
+/// 根据 page 和 CGPDFDocumentRef 初始化
 - (instancetype)initWithFrame:(CGRect)frame atPage:(long)index withPDFDoc:(CGPDFDocumentRef)pdfDoc;
 
 @end
