@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LPPBookInfoModel: NSObject <NSCoding>    //  NSCoding 是什么？ TODO
+@interface LPPBookInfoModel: YGRootModel
 
 /*
  <title>:题名
@@ -50,7 +50,7 @@
 
 @end
 
-@interface YGBookModel : NSObject <NSCoding>
+@interface YGBookModel : YGRootModel
 /// 资源路径
 @property (nonatomic,strong) NSURL *resource;
 /// 书籍基本信息
@@ -58,29 +58,29 @@
 ///  电子书文本内容
 @property (nonatomic,copy) NSString *content;
 /// 电子书类型（txt, epub）    TODO 待加入PDF类型
-@property (nonatomic,assign) LPPEBookType bookType;
+//@property (nonatomic,assign) LPPEBookType bookType;
 /// 章节
-@property (nonatomic,readonly) NSArray <XDSChapterModel*> *chapters;
+@property (nonatomic,readonly) NSArray <YGChapterModel *> *chapters;
 /// 包含笔记的章节
-@property (nonatomic,readonly) NSArray <XDSChapterModel*> *chapterContainNotes;
+@property (nonatomic,readonly) NSArray <YGChapterModel *> *chapterContainNotes;
 /// 包含书签的章节
-@property (nonatomic,readonly) NSArray <XDSChapterModel*> *chapterContainMarks;
+@property (nonatomic,readonly) NSArray <YGChapterModel *> *chapterContainMarks;
 /// 阅读进度
-@property (nonatomic,strong) XDSRecordModel *record;//阅读进度
+@property (nonatomic,strong) YGRecordModel *record;
 
 - (instancetype)initWithContent:(NSString *)content;
 - (instancetype)initWithePub:(NSString *)ePubPath;
-+ (void)updateLocalModel:(XDSBookModel *)bookModel url:(NSURL *)url;
++ (void)updateLocalModel:(YGBookModel *)bookModel url:(NSURL *)url;
 + (id)getLocalModelWithURL:(NSURL *)url;
 
-- (void)loadContentInChapter:(XDSChapterModel *)chapterModel;
+- (void)loadContentInChapter:(YGChapterModel *)chapterModel;
 - (void)loadContentForAllChapters;
 
-- (void)deleteNote:(XDSNoteModel *)noteModel;
-- (void)addNote:(XDSNoteModel *)noteModel;
+- (void)deleteNote:(YGNoteModel *)noteModel;
+- (void)addNote:(YGNoteModel *)noteModel;
 
-- (void)deleteMark:(XDSMarkModel *)markModel;
-- (void)addMark:(XDSMarkModel *)markModel;
+- (void)deleteMark:(YGMarkModel *)markModel;
+- (void)addMark:(YGMarkModel *)markModel;
 
 @end
 

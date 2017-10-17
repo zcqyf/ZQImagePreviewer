@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		279196177897D82553A6E0E5 /* libPods-ImagePreviewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */; };
+		D8071BA91F96066D002CB0F7 /* YGRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071BA81F96066D002CB0F7 /* YGRootModel.m */; };
+		D8071BAC1F96103E002CB0F7 /* YGReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071BAB1F96103E002CB0F7 /* YGReadViewController.m */; };
+		D8071BB11F961140002CB0F7 /* YGReaderGlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071BB01F961140002CB0F7 /* YGReaderGlobalConst.m */; };
+		D8071BB41F961556002CB0F7 /* YGReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071BB31F961556002CB0F7 /* YGReadView.m */; };
 		D813C4D01F94BC3F0027B5D8 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C49A1F94BC3F0027B5D8 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D813C4D11F94BC3F0027B5D8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C49C1F94BC3F0027B5D8 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D813C4D21F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D813C4A01F94BC3F0027B5D8 /* CXMLDocument_CreationExtensions.m */; };
@@ -61,6 +65,9 @@
 		D8CD0E421F7F2EC700027EE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E411F7F2EC700027EE8 /* main.m */; };
 		D8CD0E4C1F7F2EC700027EE8 /* ImagePreviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E4B1F7F2EC700027EE8 /* ImagePreviewerTests.m */; };
 		D8CD0E571F7F2EC800027EE8 /* ImagePreviewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0E561F7F2EC800027EE8 /* ImagePreviewerUITests.m */; };
+		D8D47ABD1F959E42007B9EB3 /* YGReadConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D47ABC1F959E42007B9EB3 /* YGReadConfig.m */; };
+		D8D47AC01F959E52007B9EB3 /* YGReadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D47ABF1F959E52007B9EB3 /* YGReadOperation.m */; };
+		D8D47AC31F959E5D007B9EB3 /* YGReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D47AC21F959E5D007B9EB3 /* YGReadManager.m */; };
 		D8FD40551F8B8072002A4B66 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +91,14 @@
 /* Begin PBXFileReference section */
 		1BB9000E9E9F3EF078908A80 /* Pods-ImagePreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.debug.xcconfig"; sourceTree = "<group>"; };
 		85C6BF364FF9BF2ED846ADCB /* Pods-ImagePreviewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.release.xcconfig"; sourceTree = "<group>"; };
+		D8071BA71F96066D002CB0F7 /* YGRootModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGRootModel.h; sourceTree = "<group>"; };
+		D8071BA81F96066D002CB0F7 /* YGRootModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGRootModel.m; sourceTree = "<group>"; };
+		D8071BAA1F96103E002CB0F7 /* YGReadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReadViewController.h; sourceTree = "<group>"; };
+		D8071BAB1F96103E002CB0F7 /* YGReadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGReadViewController.m; sourceTree = "<group>"; };
+		D8071BAF1F961140002CB0F7 /* YGReaderGlobalConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReaderGlobalConst.h; sourceTree = "<group>"; };
+		D8071BB01F961140002CB0F7 /* YGReaderGlobalConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGReaderGlobalConst.m; sourceTree = "<group>"; };
+		D8071BB21F961556002CB0F7 /* YGReadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReadView.h; sourceTree = "<group>"; };
+		D8071BB31F961556002CB0F7 /* YGReadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGReadView.m; sourceTree = "<group>"; };
 		D813C4981F94BC3F0027B5D8 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		D813C4991F94BC3F0027B5D8 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		D813C49A1F94BC3F0027B5D8 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
@@ -132,7 +147,6 @@
 		D813C4CE1F94BC3F0027B5D8 /* 华文行楷.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华文行楷.ttf"; sourceTree = "<group>"; };
 		D813C4EB1F94BC690027B5D8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D813C4ED1F94BE6A0027B5D8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		D813C4F01F94C2370027B5D8 /* YGReaderHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReaderHeader.pch; sourceTree = "<group>"; };
 		D813C4F11F94C3CF0027B5D8 /* YGBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBookModel.h; sourceTree = "<group>"; };
 		D813C4F21F94C3CF0027B5D8 /* YGBookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBookModel.m; sourceTree = "<group>"; };
 		D813C4F41F94C3E90027B5D8 /* YGChapterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGChapterModel.h; sourceTree = "<group>"; };
@@ -183,6 +197,14 @@
 		D8CD0E521F7F2EC700027EE8 /* ImagePreviewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePreviewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD0E561F7F2EC800027EE8 /* ImagePreviewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewerUITests.m; sourceTree = "<group>"; };
 		D8CD0E581F7F2EC800027EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D47AB81F959227007B9EB3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D8D47AB91F95930B007B9EB3 /* YGReaderHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReaderHeader.h; sourceTree = "<group>"; };
+		D8D47ABB1F959E42007B9EB3 /* YGReadConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReadConfig.h; sourceTree = "<group>"; };
+		D8D47ABC1F959E42007B9EB3 /* YGReadConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGReadConfig.m; sourceTree = "<group>"; };
+		D8D47ABE1F959E52007B9EB3 /* YGReadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReadOperation.h; sourceTree = "<group>"; };
+		D8D47ABF1F959E52007B9EB3 /* YGReadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGReadOperation.m; sourceTree = "<group>"; };
+		D8D47AC11F959E5D007B9EB3 /* YGReadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGReadManager.h; sourceTree = "<group>"; };
+		D8D47AC21F959E5D007B9EB3 /* YGReadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGReadManager.m; sourceTree = "<group>"; };
 		D8FD40531F8B8072002A4B66 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D8FD40541F8B8072002A4B66 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		E430FD75785ACC2BCAF8DC0B /* libPods-ImagePreviewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImagePreviewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,7 +276,7 @@
 				D813C4C21F94BC3F0027B5D8 /* Resource */,
 				D813C4C81F94BC3F0027B5D8 /* Util */,
 				D813C4C91F94BC3F0027B5D8 /* View */,
-				D813C4F01F94C2370027B5D8 /* YGReaderHeader.pch */,
+				D8D47AB91F95930B007B9EB3 /* YGReaderHeader.h */,
 			);
 			path = YGReaderKit;
 			sourceTree = "<group>";
@@ -262,6 +284,8 @@
 		D813C4951F94BC3F0027B5D8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8071BAA1F96103E002CB0F7 /* YGReadViewController.h */,
+				D8071BAB1F96103E002CB0F7 /* YGReadViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +293,12 @@
 		D813C4961F94BC3F0027B5D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D8D47ABB1F959E42007B9EB3 /* YGReadConfig.h */,
+				D8D47ABC1F959E42007B9EB3 /* YGReadConfig.m */,
+				D8D47ABE1F959E52007B9EB3 /* YGReadOperation.h */,
+				D8D47ABF1F959E52007B9EB3 /* YGReadOperation.m */,
+				D8D47AC11F959E5D007B9EB3 /* YGReadManager.h */,
+				D8D47AC21F959E5D007B9EB3 /* YGReadManager.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -345,6 +375,8 @@
 		D813C4C11F94BC3F0027B5D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8071BA71F96066D002CB0F7 /* YGRootModel.h */,
+				D8071BA81F96066D002CB0F7 /* YGRootModel.m */,
 				D813C4F11F94C3CF0027B5D8 /* YGBookModel.h */,
 				D813C4F21F94C3CF0027B5D8 /* YGBookModel.m */,
 				D813C4F41F94C3E90027B5D8 /* YGChapterModel.h */,
@@ -373,6 +405,8 @@
 		D813C4C81F94BC3F0027B5D8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D8071BAF1F961140002CB0F7 /* YGReaderGlobalConst.h */,
+				D8071BB01F961140002CB0F7 /* YGReaderGlobalConst.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -380,6 +414,8 @@
 		D813C4C91F94BC3F0027B5D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8071BB21F961556002CB0F7 /* YGReadView.h */,
+				D8071BB31F961556002CB0F7 /* YGReadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -487,6 +523,7 @@
 				D81D7EC41F8C5C860038A724 /* Main.storyboard */,
 				D8CD0E401F7F2EC700027EE8 /* Info.plist */,
 				D8CD0E411F7F2EC700027EE8 /* main.m */,
+				D8D47AB81F959227007B9EB3 /* PrefixHeader.pch */,
 			);
 			path = ImagePreviewer;
 			sourceTree = "<group>";
@@ -706,7 +743,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D47AC31F959E5D007B9EB3 /* YGReadManager.m in Sources */,
+				D8071BA91F96066D002CB0F7 /* YGRootModel.m in Sources */,
 				D813C4E01F94BC3F0027B5D8 /* UIImage+ImageEffects.m in Sources */,
+				D8D47AC01F959E52007B9EB3 /* YGReadOperation.m in Sources */,
 				D813C4F61F94C3E90027B5D8 /* YGChapterModel.m in Sources */,
 				D813C4F91F94C40D0027B5D8 /* YGRecordModel.m in Sources */,
 				D813C4D31F94BC3F0027B5D8 /* CXMLNode_CreationExtensions.m in Sources */,
@@ -719,8 +759,10 @@
 				D87F19891F909C3300E8FABD /* PhotoBrowserProgressView.m in Sources */,
 				D813C4D71F94BC3F0027B5D8 /* CXMLElement.m in Sources */,
 				D813C4DD1F94BC3F0027B5D8 /* CXMLNode_XPathExtensions.m in Sources */,
+				D8071BAC1F96103E002CB0F7 /* YGReadViewController.m in Sources */,
 				D813C4E11F94BC3F0027B5D8 /* UIView+XDSHyperLink.m in Sources */,
 				D813C4D41F94BC3F0027B5D8 /* CXHTMLDocument.m in Sources */,
+				D8071BB11F961140002CB0F7 /* YGReaderGlobalConst.m in Sources */,
 				D8CD0E371F7F2EC700027EE8 /* ViewController.m in Sources */,
 				D813C4DA1F94BC3F0027B5D8 /* CXMLNamespaceNode.m in Sources */,
 				D813C4D11F94BC3F0027B5D8 /* NSString+HTML.m in Sources */,
@@ -740,9 +782,11 @@
 				D813C4D01F94BC3F0027B5D8 /* GTMNSString+HTML.m in Sources */,
 				D813C4D61F94BC3F0027B5D8 /* CXMLDocument_PrivateExtensions.m in Sources */,
 				D813C4DC1F94BC3F0027B5D8 /* CXMLNode_PrivateExtensions.m in Sources */,
+				D8D47ABD1F959E42007B9EB3 /* YGReadConfig.m in Sources */,
 				D813C4DB1F94BC3F0027B5D8 /* CXMLNode.m in Sources */,
 				D87F19861F909C3300E8FABD /* PBCollectionViewCell.m in Sources */,
 				D87F199F1F90B17F00E8FABD /* BackViewController.m in Sources */,
+				D8071BB41F961556002CB0F7 /* YGReadView.m in Sources */,
 				D813C4D51F94BC3F0027B5D8 /* CXMLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,6 +880,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -890,6 +935,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -911,6 +957,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9RQC3AJ9J;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = /Users/yg/Desktop/ImagePreviewer/ZQImagePreviewer/ImagePreviewer/ImagePreviewer/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -931,6 +979,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U9RQC3AJ9J;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = /Users/yg/Desktop/ImagePreviewer/ZQImagePreviewer/ImagePreviewer/ImagePreviewer/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
